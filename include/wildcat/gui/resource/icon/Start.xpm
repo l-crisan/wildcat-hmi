@@ -1,0 +1,25 @@
+/* XPM */
+static char *IconStart[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 3 1 ",
+"  c None",
+". c #0C0C0C",
+"X c #C0C0C0",
+/* pixels */
+"                ",
+" .............. ",
+" .XXXXXXXXXXXX. ",
+" .XX.XXXXXXXXX. ",
+" .XX...XXXXXXX. ",
+" .XX.....XXXXX. ",
+" .XX.......XXX. ",
+" .XX........XX. ",
+" .XX........XX. ",
+" .XX.......XXX. ",
+" .XX.....XXXXX. ",
+" .XX...XXXXXXX. ",
+" .XX.XXXXXXXXX. ",
+" .XXXXXXXXXXXX. ",
+" .............. ",
+"                "
+};

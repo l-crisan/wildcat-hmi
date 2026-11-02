@@ -1,0 +1,22 @@
+SubDir TOP src wildcat-gui-gfx libz ;
+SubDirHdrs  $(TOP)/src/wildcat-gui-gfx/libz ;
+SubDirHdrs  $(TOP)/src/wildcat-gui-gfx/libz/include ;
+SubDirObjects $(WILDCAT_OUTPUT_OBJECT) libz ;
+
+Library zlib : adler32.c
+                compress.c
+                crc32.c
+                deflate.c
+                # gzclose.c
+                # gzlib.c
+                # gzread.c
+                # gzwrite.c
+                infback.c
+                inffast.c
+                inflate.c
+                inftrees.c
+                trees.c
+                uncompr.c
+                zutil.c ;
+
+MakeLocate zlib : $(WILDCAT_OUTPUT_TARGET) ;

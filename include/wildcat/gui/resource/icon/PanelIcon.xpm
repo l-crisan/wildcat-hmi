@@ -1,0 +1,25 @@
+/* XPM */
+static char *PanelIcon[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 3 1 ",
+"  c None",
+". c black",
+"X c #C0C0C0",
+/* pixels */
+"                ",
+" .............. ",
+" .XXXXXXXXXXXX. ",
+" .XXXXXXXXXXXX. ",
+" .XXXXXXXXXXXX. ",
+" .X....XXXXXXX. ",
+" .X.XX.XXXXXXX. ",
+" .X.XX.XXXXXXX. ",
+" .X.XX.X.....X. ",
+" .X....X.XXX.X. ",
+" .XXXXXX.XXX.X. ",
+" .XXXXXX.XXX.X. ",
+" .XXXXXX.....X. ",
+" .XXXXXXXXXXXX. ",
+" .............. ",
+"                "
+};

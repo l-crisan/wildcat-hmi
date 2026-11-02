@@ -1,0 +1,28 @@
+/* XPM */
+static char *IconSave[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 6 1 ",
+"  c None",
+". c gray15",
+"X c #B2B2B2",
+"o c #E6EAEE",
+"O c gray95",
+"+ c gray98",
+/* pixels */
+"................",
+".XX.++++++++.XX.",
+".XX.O++++++O.XX.",
+".XX.O++++++O.XX.",
+".XX.O++++++O.XX.",
+".XX.O++++++O.XX.",
+".XX.oOOOOOOo.XX.",
+".XX..........XX.",
+".XXXXXXXXXXXXXX.",
+".XXX........XXX.",
+".XXX.++++++.XXX.",
+".XXX.+..+++.XXX.",
+".XXX.+..+++.XXX.",
+" .XX.+..+++.XXX.",
+"  .X.++++++.XXX.",
+"   ............."
+};

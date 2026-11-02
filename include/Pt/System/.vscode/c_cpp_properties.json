@@ -1,0 +1,37 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "cl.exe",
+            "cppStandard": "c++20",
+            "compilerArgs": [ "/Zc:__cplusplus" ],
+            "intelliSenseMode": "windows-msvc-x64"
+        },
+        {
+            "name": "MacOS",
+            "defines": [
+                "_DEBUG"
+            ],
+            "compilerPath": "/usr/bin/clang++",
+            "cppStandard": "c++20",
+            "compilerArgs": [ "-std=c++20" ],
+            "intelliSenseMode": "macos-clang-x64"
+        },
+        {
+            "name": "Linux",
+            "defines": [
+                "_DEBUG"
+            ],
+            "compilerPath": "/usr/bin/g++",
+            "cppStandard": "c++20",
+            "compilerArgs": [ "-std=c++20" ],
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

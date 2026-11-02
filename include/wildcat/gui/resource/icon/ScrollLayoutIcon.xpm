@@ -1,0 +1,25 @@
+/* XPM */
+static const char *ScrollLayoutIcon[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 3 1 ",
+"  c black",
+". c #808080",
+"X c None",
+/* pixels */
+"                ",
+" X ..... XXX XX ",
+" X ..... XX   X ",
+" X ..... X      ",
+" X ..... XXX XX ",
+" X ..... XXX XX ",
+" X ..... XXX XX ",
+" X ..... XXX XX ",
+" X ..... XXXXXX ",
+" X ..... XXX XX ",
+" X       XXX XX ",
+" XXXXXXXXXXX XX ",
+" XXXXXXXXX      ",
+" XXXXXXXXXX   X ",
+" XXXXXXXXXXX XX ",
+"                "
+};

@@ -1,0 +1,895 @@
+##########################################################################
+# Basic Configuration Rules
+##########################################################################
+
+YES ?= "yes" ;
+NO ?= "no" ;
+
+# windows batch and posix shell
+STDERR_TO_STDOUT = " 2>&1" ;
+
+TONULL = " 2>/dev/null 1>/dev/null" ;
+if $(OS:L) = "nt"
+{
+    TONULL = " 2>NUL 1>NUL" ;
+}
+
+CONFIGURE_LOG = $(JAMRULES:S=.log) ;
+CONFIGURED_VARIABLES = ;
+
+rule Configure
+{
+    local _found ;
+    for local _v in $(CONFIGURED_VARIABLES)
+    {
+        if $(_v) = $(1)
+        {
+            _found = 1 ;
+        }
+    }
+
+    if ! $(_found)
+    {
+        CONFIGURED_VARIABLES += $(1) ;
+    }
+}
+
+rule ConfigureClean
+{
+    local _jamrules = $(JAMRULES:R=$(1)) ;
+
+    TryCommand "rm -f "$(JAMRULES) ;
+    TryCommand "del /f/q "$(JAMRULES) ;
+
+    TryCommand "rm -f "$(CONFIGURE_LOG) ;
+    TryCommand "del /f/q "$(CONFIGURE_LOG) ;
+}
+
+rule ConfigureLog
+{
+    for local _line in $(1)
+    {
+        WriteFile $(CONFIGURE_LOG) : $(_line) ;
+    }
+}
+
+rule ConfigureSwitch
+{
+    local _config = $(1) ;
+
+    if $(_config)
+    {
+        # TODO: check timestamp of cached Jamrules against Jamconfigure
+
+        if [ CHECK_IF_FILE $(JAMRULES).$(_config) ]
+        {
+            include Jamrules.$(_config) ;
+            TryCommand $(CP) $(JAMRULES).$(_config) Jamrules ;
+            Exit "Using" $(JAMRULES).$(_config) : 0 ;
+        }
+        else
+        {
+            Exit "No such configuration:" $(_config) ;
+        }
+    }
+    else
+    {
+        Exit "No such configuration." ;
+    }
+}
+
+rule ConfigureSave
+{
+    local _config = $(1) ;
+
+    if $(_config)
+    {
+        TryCommand "rm -f "$(JAMRULES).$(_config) ;
+        TryCommand "del /f/q "$(JAMRULES).$(_config) ;
+
+        ConfigureWrite $(JAMRULES).$(_config) ;
+    }
+}
+
+rule ConfigureWrite
+{
+    local _file = $(1) ;
+
+    for local _var in $(CONFIGURED_VARIABLES)
+    {
+        local _value ;
+        for _v in $($(_var))
+        {
+            local _valtmp ;
+            _valtmp = [ Replace $(_v) "\\\\" "\\\\" ] ;
+            _valtmp = [ Replace $(_valtmp) "\"" "\\\"" ] ;
+            _value += "\"$(_valtmp)\"" ;
+        }
+
+        WriteFile $(_file) : $(_var)" ?= "$(_value:J=" ")" ;" ;
+    }
+
+    # Toolset specific variables and rules
+    WriteFile $(_file) : "" ;
+    WriteFile $(_file) : "Load $(TOOLSET:L).jam ;" ;
+}
+
+
+rule ConfigureExit
+{
+    ConfigureWrite $(JAMRULES) ;
+    Exit "Configuration successful." : 0 ;
+}
+
+rule SubTree
+{
+    #
+    # SubConfigure TOP d1 [ d2 [ d3 [ d4 ] ] ] : SUB_TOP
+    #
+
+    if $(<[1]) = $(>[1])
+    {
+        Exit SubConfigure can not use parent root variable ;
+    }
+
+    if ! $($(<[1]))
+    {
+        EXIT Top level of source tree has not been set with $(<[1]) ;
+    }
+
+    # path to subtree Jamconfigure and Jamrules
+    local _subdir = [ FDirName $($(<[1])) $(<[2-]) ] ;
+    local _subrules = [ FDirName $(_subdir) $(JAMRULES) ] ;
+
+    #ConfigureClean $(_subdir) ;
+    #
+    #local config_vars = $(CONFIGURED_VARIABLES) ;
+    #CONFIGURED_VARIABLES = ;
+
+    # set subconfigure root variable
+    $(2) = $(_subdir) ;
+
+    include [ FDirName $(_subdir) Jamconfigure ] ;
+
+    #for local _var in $(CONFIGURED_VARIABLES)
+    #{
+    #    local _value ;
+    #    for _v in $($(_var))
+    #    {
+    #        local _valtmp ;
+    #        _valtmp = [ Replace $(_v) "\\\\" "\\\\" ] ;
+    #        _valtmp = [ Replace $(_valtmp) "\"" "\\\"" ] ;
+    #        _value += "\"$(_valtmp)\"" ;
+    #    }
+    #
+    #     WriteFile $(_subrules) : $(_var)" ?= "$(_value:J=" ")" ;" ;
+    #}
+
+    #CONFIGURED_VARIABLES = $(config_vars) ;
+}
+
+rule SubDir
+{
+    local _r _s ;
+
+    #
+    # SubDir TOP
+    #
+    # This introduces a Jamconfigure that is part of a project tree
+    # rooted at $(TOP). This allows the Jamconfigure of a project to be
+    # used as a sub project.
+    #
+
+    #
+    # Set root variable to current subdir
+    #
+    if ! $($(<[1]))
+    {
+        if ! $(<[1])
+        {
+            EXIT SubDir syntax error ;
+        }
+
+        $(<[1]) = [ FSubDir $(<[2-]) ] ;
+    }
+}
+
+rule TryCommand
+{
+    local _cmd  = $(1) $(STDERR_TO_STDOUT) ; #$(TONULL) ;
+    ConfigureLog $(_cmd:J=" ") ;
+
+    local _result = [ EXEC $(_cmd:J=" ") ] ;
+    ConfigureLog $(_result[2-]) ;
+
+    if $(_result[1]) = 0
+    {
+        return $(YES) ;
+    }
+}
+
+###############################################################################
+# Configure remove files command
+###############################################################################
+
+rule ConfigureRm
+{
+    RM = ;
+    WriteFile check.in : "delete me" ;
+
+    if ! $(RM) && [ TryCommand "rm -f check.in"   ]
+    {
+        RM = "rm -f"  ;
+    }
+
+    if ! $(RM) && [ TryCommand "del /f/q check.in"  ]
+    {
+        RM = "del /f/q" ;
+    }
+
+    TryCommand $(RM) "check.in" ;
+
+    if ! $(RM)
+    {
+        Exit "Checking for remove file... FAILED!" ;
+    }
+
+    Configure RM : $(RM) ;
+    EchoOption RM : "Remove file" ;
+}
+
+###############################################################################
+# Configure move command
+###############################################################################
+
+rule ConfigureMv
+{
+    MV = ;
+    WriteFile check.in : "delete me" ;
+
+    if ! $(MV) && [ TryCommand "move /y check.in check.out"   ]
+    {
+        MV = "move /y"  ;
+    }
+
+    if ! $(MV) && [ TryCommand "mv -f check.in check.out"  ]
+    {
+        MV = "mv -f" ;
+    }
+
+    TryCommand $(RM) "check.in" "check.out" ;
+
+    if ! $(MV)
+    {
+        Exit "Checking for file move... FAILED!" ;
+    }
+
+    Configure MV : $(MV) ;
+    EchoOption MV : "Move file" ;
+}
+
+###############################################################################
+# Configure copy command
+###############################################################################
+
+rule ConfigureCp
+{
+    CP = ;
+    WriteFile check.in : "delete me" ;
+
+    if ! $(CP) && [ TryCommand "copy check.in check.out"   ]
+    {
+        CP = "copy"  ;
+    }
+
+    if ! $(CP) && [ TryCommand "cp -f check.in check.out"  ]
+    {
+        CP = "cp -f" ;
+    }
+
+    TryCommand $(RM) "check.in" "check.out" ;
+
+    if ! $(CP)
+    {
+        Exit "Checking for file copy... FAILED!" ;
+    }
+
+    Configure CP : $(CP) ;
+    EchoOption CP : "Copy file" ;
+}
+
+###############################################################################
+# Configure creation and removal of directories
+###############################################################################
+
+rule ConfigureMkDir
+{
+    MKDIR = ;
+    RMDIR = ;
+
+    if ! $(MKDIR) && [ TryCommand "mkdir check_dir" ]
+    {
+        MKDIR = "mkdir" ;
+    }
+
+    if ! $(RMDIR) && [ TryCommand "rmdir /s/q check_dir" ]
+    {
+        RMDIR = "rmdir /s/q" ;
+    }
+
+    if ! $(RMDIR) && [ TryCommand "rmdir check_dir" ]
+    {
+        RMDIR = "rmdir" ;
+    }
+
+    if ! $(RMDIR) && [ TryCommand "rm -rf check_dir" ]
+    {
+        RMDIR = "rm -rf" ;
+    }
+
+    if ! $(MKDIR)
+    {
+        Exit "Checking for mkdir... FAILED!" ;
+    }
+
+    if ! $(RMDIR)
+    {
+        Exit "Checking for rmdir... FAILED!" ;
+    }
+
+    Configure MKDIR : $(MKDIR) ;
+    EchoOption MKDIR : "Make dir" ;
+
+    Configure RMDIR : $(RMDIR) ;
+    EchoOption RMDIR : "Remove dir" ;
+}
+
+###############################################################################
+# Configure file access rights commands
+###############################################################################
+
+rule ConfigureChMod
+{
+    CHMOD = ;
+    WriteFile check.in : "delete me" ;
+
+    if ! $(CHMOD) && [ TryCommand "chmod 777 check.in" ]
+    {
+        CHMOD = chmod ;
+        CHGRP = chgrp ;
+        CHOWN = chown ;
+
+        Configure CHMOD ;
+        Configure CHGRP ;
+        Configure CHOWN ;
+
+        EchoOption CHMOD : "Change mode" ;
+        EchoOption CHGRP : "Change group") ;
+        EchoOption CHOWN : "Change owner" ;
+
+        EXEMODE ?= 711 ;
+        Configure EXEMODE ;
+        EchoOption EXEMODE : "Executable mode" ;
+
+        FILEMODE ?= 644 ;
+        Configure FILEMODE ;
+        EchoOption FILEMODE : "File mode" ;
+    }
+
+    TryCommand $(RM) "check.in" ;
+}
+
+###############################################################################
+# Configure file link command
+###############################################################################
+
+rule ConfigureLn
+{
+    LN = ;
+    WriteFile check.in : "delete me" ;
+
+    if ! $(LN) && [ TryCommand "ln check.in check.out" ]
+    {
+        LN = "ln" ;
+    }
+
+    TryCommand $(RM) "check.in" "check.out" ;
+
+    if ! $(LN)
+    {
+        EchoOption LN : "File link" : "not supported" ;
+    }
+    else
+    {
+        Configure LN : $(LN) ;
+        EchoOption LN : "Link file" ;
+    }
+}
+
+###############################################################################
+# Configure path separator and relative path symbols
+###############################################################################
+
+rule ConfigureDotSlash
+{
+    DOT = ;
+    if ! $(DOT) && [ TryCommand "cd ." ]
+    {
+        DOT = "." ;
+    }
+
+    if ! $(DOT)
+    {
+        Exit "Checking for directory dot... FAILED!" ;
+    }
+
+    DOTDOT = ;
+    if ! $(DOTDOT) && [ TryCommand "cd .." ]
+    {
+        DOTDOT = ".." ;
+    }
+
+    if ! $(DOTDOT)
+    {
+        Exit "Checking for directory dotdot... FAILED!" ;
+    }
+
+    SLASH = ;
+    if ! $(SLASH) && [ TryCommand "cd .\\" ]
+    {
+        SLASH = "\\" ;
+    }
+
+    if ! $(SLASH) &&  [ TryCommand "cd ./" ]
+    {
+        SLASH = "/" ;
+
+    }
+
+    if ! $(SLASH)
+    {
+        Exit "Checking for directory separator... FAILED!" ;
+    }
+
+    Configure DOT : $(DOT) ;
+    EchoOption DOT : "Directory dot" ;
+
+    Configure DOTDOT : $(DOTDOT) ;
+    EchoOption DOTDOT : "Directory dotdot" ;
+
+    Configure SLASH : $(SLASH) ;
+    EchoOption SLASH : "Directory separator" ;
+}
+
+
+rule ConfigureCmd
+{
+    if ! $(CMDSEP) && [ TryCommand "cd . ; cd ." ]
+    {
+        CMDSEP = ";" ;
+    }
+
+    if ! $(CMDSEP) && [ TryCommand "cd . & cd ." ]
+    {
+        CMDSEP = "&" ;
+    }
+
+    if ! $(CMDSEP)
+    {
+        Exit "Checking for command separator... FAILED!" ;
+    }
+
+    Configure CMDSEP : $(CMDSEP) ;
+    EchoOption CMDSEP : "Command separator" ;
+
+    if ! $(CMDAND) && [ TryCommand "cd . && cd ." ]
+    {
+        CMDAND = "&&" ;
+    }
+
+    if ! $(CMDAND)
+    {
+        Exit "Checking for command AND... FAILED!" ;
+    }
+
+    Configure CMDAND : $(CMDAND) ;
+    EchoOption CMDAND : "Command and" ;
+}
+
+
+rule ConfigureTarget
+{
+    TARGET_OS ?= $(OS:L) ;
+    EchoOption TARGET_OS : "Target OS"  ;
+    Configure TARGET_OS ;
+    Load $(TARGET_OS:L).jam ;
+
+    TARGET_OSPLAT ?= $(OSPLAT:L) ;
+    EchoOption TARGET_OSPLAT : "Target Platform" ;
+    Configure TARGET_OSPLAT ;
+
+    EchoOption SUFOBJ : "Object suffix" ;
+    Configure SUFOBJ ;
+
+    EchoOption SUFEXE : "Executable suffix" ;
+    Configure SUFEXE ;
+
+    EchoOption PRELIB : "Library prefix") ;
+    Configure PRELIB ;
+
+    EchoOption SUFLIB : "Library suffix" ;
+    Configure SUFLIB ;
+
+    EchoOption SUFDLL : "Shared library suffix" ;
+    Configure SUFDLL ;
+}
+
+
+rule CheckToolset
+{
+}
+
+
+rule ConfigureToolset
+{
+    if ! $(TOOLSET)
+    {
+        Exit "Checking for toolset... FAILED! (Please set the TOOLSET variable)" ;
+    }
+
+    EchoOption TOOLSET : "Toolset" ;
+    Configure TOOLSET : $(TOOLSET) ;
+
+    TOOLSET_ROOT ?= "" ;
+    TOOLSET_PREFIX ?= "" ;
+    TOOLSET_PATH ?= "" ;
+
+    Load $(TOOLSET:L).jam ;
+
+    CheckToolset ;
+
+    local toolset_path = "" ;
+
+    if $(TOOLSET_PATH) || $(TOOLSET_ROOT)
+    {
+      if $(OS:L) = nt
+      {
+          toolset_path = $(TOOLSET_ROOT:J=" ") ;
+
+          for local p in $(TOOLSET_PATH)
+          {
+              if $(toolset_path)
+              {
+                  toolset_path += ";" ;
+              }
+
+              toolset_path += $(p) ;
+          }
+
+          TOOLSET_SET_PATH = set PATH=$(toolset_path:J="");%PATH% ;
+      }
+      else
+      {
+          toolset_path = $(TOOLSET_ROOT:J=" ") ;
+
+          for local p in $(TOOLSET_PATH)
+          {
+              if $(toolset_path)
+              {
+                  toolset_path += ";" ;
+              }
+
+              toolset_path += $(p) ;
+          }
+
+          TOOLSET_SET_PATH = PATH=$(toolset_path):\$PATH ;
+      }
+    }
+
+    if $(TOOLSET_PREFIX)
+    {
+        EchoOption TOOLSET_PREFIX : "Toolset prefix" ;
+        Configure TOOLSET_PREFIX : $(TOOLSET_PREFIX) ;
+    }
+
+    if $(TOOLSET_ROOT)
+    {
+        EchoOption TOOLSET_ROOT : "Toolset root" ;
+    }
+
+    if $(TOOLSET_PATH)
+    {
+        EchoOption TOOLSET_PATH : "Toolset path" ;
+    }
+
+    if $(TOOLSET_SET_PATH)
+    {
+        TOOLSET_SET_PATH = $(TOOLSET_SET_PATH:J=" ") ;
+        Configure TOOLSET_SET_PATH : $(TOOLSET_SET_PATH) ;
+    }
+}
+
+
+rule ConfigureCc
+{
+    if ! $(CC_CONFIGURED)
+    {
+        CheckCc ;
+
+        EchoOption AS : "Assembler" : $(AS) ;
+        EchoOption AR : "Archiver" : $(AR) ;
+        EchoOption CC : "C compiler" : $(CC) ;
+        EchoOption LINK : "Linker" : $(LINK) ;
+        EchoOption RANLIB : "Ranlib tool" : $(RANLIB:BS) ;
+
+        EchoOption OPTIM : "Optimisation" ;
+        EchoOption WARN : "Warning Level" ;
+        EchoOption CCFLAGS : "C Flags" ;
+        EchoOption STDHDRS : "Standard Headers" ;
+        EchoOption LINKFLAGS : "Link Flags" ;
+        EchoOption MAIN_LINKFLAGS : "Main Link Flags" ;
+        EchoOption DLL_LINKFLAGS : "Dll Link Flags" ;
+
+        CC_CONFIGURED = 1 ;
+    }
+}
+
+
+rule ConfigureC++
+{
+    if ! $(C++_CONFIGURED)
+    {
+        CheckC++ ;
+
+        EchoOption C++ : "C++ compiler" : $(C++) ;
+        EchoOption LINK++ : "C++ Linker" : $(LINK++) ;
+
+        if $(STDC++)
+        {
+            EchoOption STDC++ : "C++ Standard" ;
+            Configure STDC++ ;
+        }
+
+        EchoOption C++FLAGS : "C++ Flags" ;
+        EchoOption C++LINKFLAGS : "C++ Link Flags" ;
+
+        local _r = [ CheckBuildC++ "#include <iostream>"
+                                    "int main() { std::cout << 42; return 0; }" ] ;
+        if ! $(_r)
+        {
+            Exit "ERROR: configured C++ compiler does not work" ;
+        }
+
+        C++_CONFIGURED = 1 ;
+    }
+}
+
+
+rule CheckBuild
+{
+    ConfigureLog "\n[ CheckBuild ]" ;
+
+    local _cmd = $(1) ;
+    local _src = $(2) ;
+    local _in = $(3) ;
+    local _out = $(4) ;
+
+    ConfigureLog $(_src) ;
+
+    for local _line in $(_src)
+    {
+        WriteFile $(_in) : $(_line) ;
+    }
+
+    local r = [ TryCommand $(_cmd) ] ;
+
+    TryCommand $(RM) $(_in) ;
+
+    if $(_out)
+    {
+        TryCommand $(RM) $(_out) ;
+        # TODO: only return true if _out exists after the check was run
+    }
+
+    return $(r) ;
+}
+
+
+rule CheckBuildCc
+{
+    ConfigureLog "\n[ CheckBuildCc ]" ;
+
+    local _src = $(1) ;
+    ConfigureLog $(_src) ;
+
+    local _line ;
+    for _line in $(_src)
+    {
+        WriteFile check.cpp : $(_line) ;
+    }
+
+    local _r = [ TryBuildCc check.cpp : $(2) : $(3) : $(4) : $(5) ] ;
+
+    TryCommand $(RM) check.cpp ;
+    return $(_r) ;
+}
+
+#!
+#! CheckBuildC++ src : cflags : linkflags : libpath ;
+#!
+rule CheckBuildC++
+{
+    ConfigureLog "\n[ CheckBuildC++ ]" ;
+
+    local _src = $(1) ;
+    ConfigureLog $(_src) ;
+
+    local _line ;
+    for _line in $(_src)
+    {
+        WriteFile check.cpp : $(_line) ;
+    }
+
+    local _r = [ TryBuildC++ check.cpp : $(2) : $(3) : $(4) : $(5) ] ;
+
+    TryCommand $(RM) check.cpp ;
+    return $(_r) ;
+}
+
+#!
+#! SetDependencyPath ROOT [ : INCLUDES : LIBDIR ] ;
+#!
+#! Configures the default search paths used by CheckDependencyCompileC++,
+#! CheckDependencyLinkC++ and CheckDependencyC++ when no explicit INCLUDES
+#! or LIBDIR are passed.
+#!
+#! If only ROOT is provided, DEPS_INCLUDES and DEPS_LIBDIR are derived
+#! from it using standard layout conventions (include/, lib/, debug/lib/).
+#!
+#! If INCLUDES and/or LIBDIR are provided, they are used directly.
+#!
+rule SetDependencyPath ( root * : includes * : libdir * )
+{
+    if $(includes)
+    {
+        DEPS_INCLUDES = $(includes) ;
+    }
+    else if $(root)
+    {
+        DEPS_INCLUDES = [ FDirName $(root) include ] ;
+    }
+
+    if $(libdir)
+    {
+        DEPS_LIBDIR = $(libdir) ;
+    }
+    else if $(root)
+    {
+        DEPS_LIBDIR = [ FDirName $(root) lib ] ;
+    }
+}
+
+#!
+#! CheckDependencyCompileC++ PREFIX : CODE : INCLUDES : C++FLAGS ;
+#!
+#! Compile-only probe for an external C++ dependency's headers.
+#! Does not attempt to link. Falls back to DEPS_INCLUDES when no
+#! INCLUDES are provided.
+#!
+#! On success, the variables
+#!
+#!     <PREFIX>_INCLUDES
+#!     <PREFIX>_C++FLAGS
+#!
+#! are set as a side-effect so that the caller can pick them up.
+#!
+#! Returns "yes" on success.
+#!
+rule CheckDependencyCompileC++ ( prefix : code + : includes * : c++flags * )
+{
+    if ! $(includes) && $(DEPS_INCLUDES)
+    {
+        includes = $(DEPS_INCLUDES) ;
+    }
+
+    local _result = [ CheckBuildC++ $(code)
+                                  : $(c++flags) [ FIncludes $(includes) ] ] ;
+
+    if $(_result)
+    {
+        $(prefix)_INCLUDES = $(includes) ;
+        $(prefix)_C++FLAGS = $(c++flags) ;
+    }
+
+    return $(_result) ;
+}
+
+#!
+#! CheckDependencyLinkC++ PREFIX : CODE
+#!                               : INCLUDES : C++FLAGS
+#!                               : LINKLIBS : LIBDIR : LINKFLAGS ;
+#!
+#! Compile+link probe for an external C++ dependency's library.
+#! Unlike CheckDependencyC++, this does NOT fall back to DEPS_INCLUDES —
+#! the caller is expected to supply resolved INCLUDES (e.g. from a prior
+#! CheckDependencyCompileC++ call). Falls back to DEPS_LIBDIR when no
+#! LIBDIR is provided.
+#!
+#! On success, the variables
+#!
+#!     <PREFIX>_LINKLIBS
+#!     <PREFIX>_LINKFLAGS
+#!
+#! are set as a side-effect so that the caller can pick them up.
+#!
+#! Returns "yes" on success.
+#!
+rule CheckDependencyLinkC++ ( prefix : code + : includes * : c++flags * : linklibs * : libdir * : linkflags * )
+{
+    if ! $(libdir) && $(DEPS_LIBDIR)
+    {
+        libdir = $(DEPS_LIBDIR) ;
+    }
+
+    local _libpath = [ FLibPath $(libdir) ] ;
+
+    local _result = [ CheckBuildC++ $(code)
+                                  : $(c++flags) [ FIncludes $(includes) ]
+                                  : $(linklibs) $(_libpath) $(linkflags) ] ;
+
+    if $(_result)
+    {
+        $(prefix)_LINKLIBS  = $(linklibs) ;
+        $(prefix)_LINKFLAGS = $(_libpath) $(linkflags) ;
+    }
+
+    return $(_result) ;
+}
+
+#!
+#! CheckDependencyC++ PREFIX : CODE
+#!                           : INCLUDES : C++FLAGS
+#!                           : LINKLIBS : LIBDIR : LINKFLAGS ;
+#!
+#! Toolset-agnostic compile+link probe for an external C++ dependency.
+#! LINKLIBS should use FLinkLibs (e.g. [ FLinkLibs freetype ]) and
+#! LIBDIR should be a raw directory path — FLibPath is called internally.
+#! On success, the variables
+#!
+#!     <PREFIX>_INCLUDES
+#!     <PREFIX>_C++FLAGS
+#!     <PREFIX>_LINKLIBS
+#!     <PREFIX>_LINKFLAGS
+#!
+#! are set as a side-effect so that the caller can pick them up.
+#!
+#! Returns "yes" on success.
+#!
+rule CheckDependencyC++ ( prefix : code + : includes * : c++flags * : linklibs * : libdir * : linkflags * )
+{
+    if ! $(includes) && $(DEPS_INCLUDES)
+    {
+        includes = $(DEPS_INCLUDES) ;
+    }
+
+    if ! $(libdir) && $(DEPS_LIBDIR)
+    {
+        libdir = $(DEPS_LIBDIR) ;
+    }
+
+    local _libpath = [ FLibPath $(libdir) ] ;
+
+    local _result = [ CheckBuildC++ $(code)
+                                  : $(c++flags) [ FIncludes $(includes) ]
+                                  : $(linklibs) $(_libpath) $(linkflags) ] ;
+
+    if $(_result)
+    {
+        $(prefix)_INCLUDES  = $(includes) ;
+        $(prefix)_C++FLAGS  = $(c++flags) ;
+        $(prefix)_LINKLIBS  = $(linklibs) ;
+        $(prefix)_LINKFLAGS = $(_libpath) $(linkflags) ;
+    }
+
+    return $(_result) ;
+}

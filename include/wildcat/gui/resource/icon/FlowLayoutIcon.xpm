@@ -1,0 +1,25 @@
+/* XPM */
+static const char *FlowLayoutIcon[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 3 1 ",
+"  c black",
+". c #808080",
+"X c None",
+/* pixels */
+"XXXXXXXXXXXXXXXX",
+"XXXXXXXXXXXXXXXX",
+"                ",
+" .. .. XXXXXXXX ",
+" .. .. XXXXXXXX ",
+" .. .. XXXXXXXX ",
+" .. .. XXXXX XX ",
+" .. .. XXXXX  X ",
+" .. .. X        ",
+" .. .. XXXXX  X ",
+" .. .. XXXXX XX ",
+" .. .. XXXXXXXX ",
+" .. .. XXXXXXXX ",
+"                ",
+"XXXXXXXXXXXXXXXX",
+"XXXXXXXXXXXXXXXX"
+};

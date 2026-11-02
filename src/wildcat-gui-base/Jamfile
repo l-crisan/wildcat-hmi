@@ -1,0 +1,26 @@
+SubDir TOP src wildcat-gui-base ;
+
+SubDirHdrs $(TOP)/include ;
+
+SubDirC++Flags [ FDefines WILDCAT_GUI_BASE_API_EXPORT ] ;
+
+SubDirObjects $(WILDCAT_OUTPUT_OBJECT) wildcat-gui-base ;
+
+SharedLibrary wildcat-gui-base : ArrayProperty.cpp
+                                    Object.cpp
+                                    ObjectProperty.cpp
+                                    Property.cpp
+                                    Serialisation.cpp
+                                    SimpleProperty.cpp
+                                    TypeFactory.cpp     
+                                    ResourceManager.cpp
+                                    Resource.cpp
+                                    File.cpp
+                                    Hash.cpp
+                                    TextTable.cpp
+                                 ;
+
+
+LinkLibs wildcat-gui-base : $(WILDCAT_HMI_LINKLIBS) ;
+
+MakeLocate wildcat-gui-base : $(WILDCAT_OUTPUT_TARGET) ;

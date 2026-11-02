@@ -1,0 +1,168 @@
+/*
+   Copyright (C) 2010-2026 by Laurentiu-Gheorghe Crisan
+   Copyright (C) 2010-2026 by ATESiON GmbH
+
+  This library is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 2.1 of the License, or (at your option) any later version.
+
+  As a special exception, you may use this file as part of a free
+  software library without restriction. Specifically, if other files
+  instantiate templates or use macros or inline functions from this
+  file, or you compile this file and link it with other files to
+  produce an executable, this file does not by itself cause the
+  resulting executable to be covered by the GNU General Public
+  License. This exception does not however invalidate any other
+  reasons why the executable file might be covered by the GNU Library
+  General Public License.
+
+  This library is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public
+  License along with this library; if not, write to the:
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  Boston, MA 02110-1301 USA
+*/
+#include <wildcat/gui/base/Hash.h>
+#include <iostream>
+#include <random>
+#include <sstream>
+#include <cmath>
+#include <chrono> 
+#include <ctime> 
+
+namespace wildcat {
+namespace gui {
+namespace base {
+
+static const unsigned char sTable[256] =
+{
+    0xa3,0xd7,0x09,0x83,0xf8,0x48,0xf6,0xf4,0xb3,0x21,0x15,0x78,0x99,0xb1,0xaf,0xf9,
+    0xe7,0x2d,0x4d,0x8a,0xce,0x4c,0xca,0x2e,0x52,0x95,0xd9,0x1e,0x4e,0x38,0x44,0x28,
+    0x0a,0xdf,0x02,0xa0,0x17,0xf1,0x60,0x68,0x12,0xb7,0x7a,0xc3,0xe9,0xfa,0x3d,0x53,
+    0x96,0x84,0x6b,0xba,0xf2,0x63,0x9a,0x19,0x7c,0xae,0xe5,0xf5,0xf7,0x16,0x6a,0xa2,
+    0x39,0xb6,0x7b,0x0f,0xc1,0x93,0x81,0x1b,0xee,0xb4,0x1a,0xea,0xd0,0x91,0x2f,0xb8,
+    0x55,0xb9,0xda,0x85,0x3f,0x41,0xbf,0xe0,0x5a,0x58,0x80,0x5f,0x66,0x0b,0xd8,0x90,
+    0x35,0xd5,0xc0,0xa7,0x33,0x06,0x65,0x69,0x45,0x00,0x94,0x56,0x6d,0x98,0x9b,0x76,
+    0x97,0xfc,0xb2,0xc2,0xb0,0xfe,0xdb,0x20,0xe1,0xeb,0xd6,0xe4,0xdd,0x47,0x4a,0x1d,
+    0x42,0xed,0x9e,0x6e,0x49,0x3c,0xcd,0x43,0x27,0xd2,0x07,0xd4,0xde,0xc7,0x67,0x18,
+    0x89,0xcb,0x30,0x1f,0x8d,0xc6,0x8f,0xaa,0xc8,0x74,0xdc,0xc9,0x5d,0x5c,0x31,0xa4,
+    0x70,0x88,0x61,0x2c,0x9f,0x0d,0x2b,0x87,0x50,0x82,0x54,0x64,0x26,0x7d,0x03,0x40,
+    0x34,0x4b,0x1c,0x73,0xd1,0xc4,0xfd,0x3b,0xcc,0xfb,0x7f,0xab,0xe6,0x3e,0x5b,0xa5,
+    0xad,0x04,0x23,0x9c,0x14,0x51,0x22,0xf0,0x29,0x79,0x71,0x7e,0xff,0x8c,0x0e,0xe2,
+    0x0c,0xef,0xbc,0x72,0x75,0x6f,0x37,0xa1,0xec,0xd3,0x8e,0x62,0x8b,0x86,0x10,0xe8,
+    0x08,0x77,0x11,0xbe,0x92,0x4f,0x24,0xc5,0x32,0x36,0x9d,0xcf,0xf3,0xa6,0xbb,0xac,
+    0x5e,0x6c,0xa9,0x13,0x57,0x25,0xb5,0xe3,0xbd,0xa8,0x3a,0x01,0x05,0x59,0x2a,0x46
+};
+
+#define PRIME_MULT 1717
+
+uint32_t Hash::gen32(const std::string s)
+{
+    if( s.empty())
+        return 0;
+
+    size_t len = s.length();
+
+    uint32_t hash = (uint32_t)len;
+
+    for (size_t i = 0; i < len; ++i)
+    {
+        hash ^= sTable[(s[i] + i) & 255];
+        hash = hash * PRIME_MULT;
+    }
+
+    return hash;
+}
+
+
+uint64_t Hash::gen64(const std::string s)
+{
+    size_t len = s.length();
+
+    uint64_t hash = (uint64_t)len;
+
+    for (size_t i = 0; i < len; ++i)
+    {
+        hash ^= sTable[(s[i] + i) & 255];
+        hash = hash * PRIME_MULT;
+    }
+
+    return hash;
+}
+
+uint64_t Hash::gen64(const uint8_t* data, size_t size)
+{
+    size_t len = size;
+
+    uint64_t hash = (uint64_t)len;
+
+    for (size_t i = 0; i < len; ++i)
+    {
+        hash ^= sTable[(data[i] + i) & 255];
+        hash = hash * PRIME_MULT;
+    }
+
+    return hash;    
+}
+
+
+uint32_t Hash::gen32()
+{
+    std::random_device rd;
+
+    std::mt19937 e2(rd());
+
+    std::uniform_int_distribution<uint32_t> dist(0, std::numeric_limits<uint32_t>::max());
+
+    std::stringstream ss;
+    ss << dist(e2);
+
+    std::chrono::time_point<std::chrono::system_clock> time;
+
+    time = std::chrono::system_clock::now();
+
+    auto now_ms = std::chrono::time_point_cast<std::chrono::milliseconds>(time);
+
+    auto epoch = now_ms.time_since_epoch();
+
+    auto value = std::chrono::duration_cast<std::chrono::milliseconds>(epoch);
+
+    ss << value.count();
+
+    return gen32(ss.str());
+}
+
+
+uint64_t Hash::gen64()
+{
+    std::random_device rd;
+
+    std::mt19937 e2(rd());
+
+    std::uniform_int_distribution<uint32_t> dist(0, std::numeric_limits<uint32_t>::max());
+
+    std::stringstream ss;
+    ss << dist(e2);
+
+    std::chrono::time_point<std::chrono::system_clock> time;
+
+    time = std::chrono::system_clock::now();
+
+    auto now_ms = std::chrono::time_point_cast<std::chrono::milliseconds>(time);
+
+    auto epoch = now_ms.time_since_epoch();
+
+    auto value = std::chrono::duration_cast<std::chrono::milliseconds>(epoch);
+
+    ss << value.count();
+
+    return gen64(ss.str());
+}
+
+
+}}}

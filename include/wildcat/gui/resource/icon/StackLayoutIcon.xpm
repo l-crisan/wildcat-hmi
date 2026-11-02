@@ -1,0 +1,25 @@
+/* XPM */
+static const char *StackLayoutIcon[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 3 1 ",
+"  c black",
+". c #808080",
+"X c None",
+/* pixels */
+"                ",
+" XXXXXXXXXXXXXX ",
+" XXXXXXXXXXXXXX ",
+" XX         XXX ",
+" XX ....... XXX ",
+" XX .         X ",
+" XX . ..... . X ",
+" XX . ..... . X ",
+" XX . ..... . X ",
+" XX . ..... . X ",
+" XX         . X ",
+" XXXX ....... X ",
+" XXXX ....... X ",
+" XXXX         X ",
+" XXXXXXXXXXXXXX ",
+"                "
+};

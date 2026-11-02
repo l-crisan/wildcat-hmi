@@ -1,0 +1,25 @@
+/* XPM */
+static char *IconSameHDist[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 3 1 ",
+"  c None",
+". c #040404",
+"X c gray40",
+/* pixels */
+"  .XXXXXXXXXX.  ",
+"  .XXXXXXXXXX.  ",
+"  .XXXXXXXXXX.  ",
+"  ............  ",
+"       .        ",
+"      ...       ",
+"     .....      ",
+"       .        ",
+"       .        ",
+"     .....      ",
+"      ...       ",
+"       .        ",
+"  ............  ",
+"  .XXXXXXXXXX.  ",
+"  .XXXXXXXXXX.  ",
+"  .XXXXXXXXXX.  "
+};

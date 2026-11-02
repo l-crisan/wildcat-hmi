@@ -1,0 +1,9 @@
+# Copyright (C) 2023 Atesion GmbH. All rights reserved.
+SubDir TOP ;
+
+include wildcat.jam ;
+
+#UI
+SubInclude TOP src wildcat-gui-base ;
+SubInclude TOP src wildcat-gui-gfx ;
+SubInclude TOP src wildcat-gui-window ;

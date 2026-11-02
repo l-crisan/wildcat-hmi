@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{b20fc73c-47fa-4b0f-8072-e7d7040813c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{f4217be3-5041-459c-8f16-36ec716706db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\api">
+      <UniqueIdentifier>{48d390aa-7b19-46eb-83e9-e2cf44e91040}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\api\prop">
+      <UniqueIdentifier>{4d651c58-c271-4cb8-89eb-42a68f24e972}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Jamfile" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Serialisation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TypeFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\wildcat\gui\base\ArrayProperty.h">
+      <Filter>Header Files\api\prop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\ArrayPropertyInfo.h">
+      <Filter>Header Files\api\prop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\Object.h">
+      <Filter>Header Files\api\prop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\ObjectProperty.h">
+      <Filter>Header Files\api\prop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\ObjectPropertyInfo.h">
+      <Filter>Header Files\api\prop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\Property.h">
+      <Filter>Header Files\api\prop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\PropertyInfo.h">
+      <Filter>Header Files\api\prop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\Api.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\Resource.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\ResourceManager.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\Serialisation.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\Signal.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\TypeFactory.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\SimplePropertyInfo.h">
+      <Filter>Header Files\api\prop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\SimpleProperty.h">
+      <Filter>Header Files\api\prop</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\File.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\Hash.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\Serializable.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\base\TextTable.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

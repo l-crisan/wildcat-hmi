@@ -1,0 +1,101 @@
+/*
+  Copyright (C) 2008 Marc Boris Duerner
+
+  This library is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 2.1 of the License, or (at your option) any later version.
+
+  As a special exception, you may use this file as part of a free
+  software library without restriction. Specifically, if other files
+  instantiate templates or use macros or inline functions from this
+  file, or you compile this file and link it with other files to
+  produce an executable, this file does not by itself cause the
+  resulting executable to be covered by the GNU General Public
+  License. This exception does not however invalidate any other
+  reasons why the executable file might be covered by the GNU Library
+  General Public License.
+
+  This library is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public
+  License along with this library; if not, write to the:
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  Boston, MA 02110-1301 USA
+*/
+
+#ifndef Pt_Slot_h
+#define Pt_Slot_h
+
+#include <Pt/Api.h>
+#include <Pt/Void.h>
+#include <Pt/Callable.h>
+#include <tuple>
+#include <type_traits>
+#include <utility>
+
+namespace Pt {
+
+class Connection;
+
+/** @brief Endpoint of a signal/slot connection
+
+    Slots can be constructed with the @link Pt::Slot slot()@endlink function,
+    which is overloaded for various types of callable entities, most notably
+    functions or member functions. Slots are lightweight proxy-objects and one
+    example is the Pt::MethodSlot, which allows to use a member function as a
+    slot.
+
+    @ingroup Pt-Signals
+*/
+class Slot
+{
+    public:
+        /** @brief Destructor
+        */
+        virtual ~Slot() {}
+
+        /** @brief Clone this object with new
+        */
+        virtual Slot* clone() const = 0;
+
+        /** @brief Returns the callable converted to the type-erased Callback interface
+
+            The concrete slot returns its stored callable converted to
+            Callback via a derived-to-base conversion. Callers downcast the
+            result to Callable<R, As...> or Invokable<As...> to invoke it.
+        */
+        virtual const Callback* callable() const = 0;
+
+        /** @brief Notifies of connects
+        */
+        virtual void onConnect(const Connection& c) = 0;
+
+        /** @brief Notifies of disconnects
+        */
+        virtual void onDisconnect(const Connection& c) = 0;
+
+        /** @brief Returns true if two slots are equal in value
+        */
+        virtual bool equals(const Slot& slot) const = 0;
+};
+
+/** @brief Base type for various "slot" types.
+
+    @ingroup Pt-Signals
+*/
+template <typename R, typename... As>
+class BasicSlot : public Slot
+{
+    public:
+        virtual Slot* clone() const = 0;
+};
+
+} // namespace Pt
+
+#include "SlotBind.h"
+
+#endif

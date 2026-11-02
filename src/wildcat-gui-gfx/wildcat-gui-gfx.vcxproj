@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="LinuxARM64Debug|Win32">
+      <Configuration>LinuxARM64Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="LinuxARMDebug|Win32">
+      <Configuration>LinuxARMDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="LinuxARMRelease|Win32">
+      <Configuration>LinuxARMRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="LinuxARM64Release|Win32">
+      <Configuration>LinuxARM64Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WebDebug|Win32">
+      <Configuration>WebDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WebRelease|Win32">
+      <Configuration>WebRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WinX64Debug|Win32">
+      <Configuration>WinX64Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WinX64Release|Win32">
+      <Configuration>WinX64Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WinX86Debug|Win32">
+      <Configuration>WinX86Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WinX86Release|Win32">
+      <Configuration>WinX86Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{F9FDC755-DF27-437D-8665-4715592D0FB2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>wildcat-gui-gfx</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WebRelease|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WebDebug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMRelease|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMDebug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WebRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WebDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Debug|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Release|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WebRelease|Win32'">
+    <NMakeOutput />
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WebDebug|Win32'">
+    <NMakeOutput />
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Release|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Debug|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Debug|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT;FOR_MSW;</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include;$(SolutionDir)\src\wildcat-skia\include\core</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMRelease|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMDebug|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Release|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Debug|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Release|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMDebug|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMRelease|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Debug|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Release|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WebRelease|Win32'">
+    <BuildLog>
+      <Path>
+      </Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WebDebug|Win32'">
+    <BuildLog>
+      <Path>
+      </Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Debug|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Release|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="freetype\src\Jamfile" />
+    <None Include="Jamfile" />
+    <None Include="libjpeg\Jamfile" />
+    <None Include="libpng\Jamfile" />
+    <None Include="libz\Jamfile" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Algorithm.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Api.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Arrow.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\BlockScale.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\BmpReader.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\BmpWriter.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Brush.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Check.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Color.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\ColorManager.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\ColorPalette.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\CompositionMode.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Cross.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Font.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\FontInfo.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\FontMetrics.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Graphics.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Icon.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\IcoReader.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\ImageReader.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\ImageWriter.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\JpegReader.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\JpegWriter.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Pen.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Pin.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Pixmap.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\PixmapGraphics.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\PngReader.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\PngWriter.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Point.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Polygon.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Rect.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\RegionGraphics.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Shape.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Size.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Transform.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\XpmReader.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\XpmWriter.h" />
+    <ClInclude Include="BmpHeader.h" />
+    <ClInclude Include="ClipPolygon.h" />
+    <ClInclude Include="DrawText.h" />
+    <ClInclude Include="Edge.h" />
+    <ClInclude Include="EdgeTable.h" />
+    <ClInclude Include="FreeType.h" />
+    <ClInclude Include="IcoHeader.h" />
+    <ClInclude Include="LineEdge.h" />
+    <ClInclude Include="LineFace.h" />
+    <ClInclude Include="LineSlope.h" />
+    <ClInclude Include="OpenSans-Bold.h" />
+    <ClInclude Include="OpenSans-Italic.h" />
+    <ClInclude Include="OpenSans-Regular.h" />
+    <ClInclude Include="Rasterizer.h" />
+    <ClInclude Include="XpmLexer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Arrow.cpp" />
+    <ClCompile Include="BmpReader.cpp" />
+    <ClCompile Include="BmpWriter.cpp" />
+    <ClCompile Include="Brush.cpp" />
+    <ClCompile Include="Check.cpp" />
+    <ClCompile Include="ClipPolygon.cpp" />
+    <ClCompile Include="Color.cpp" />
+    <ClCompile Include="ColorManager.cpp" />
+    <ClCompile Include="ColorPalette.cpp" />
+    <ClCompile Include="Cross.cpp" />
+    <ClCompile Include="DrawText.cpp" />
+    <ClCompile Include="Font.cpp" />
+    <ClCompile Include="FontInfo.cpp" />
+    <ClCompile Include="FontMetrics.cpp" />
+    <ClCompile Include="FreeType.cpp" />
+    <ClCompile Include="Icon.cpp" />
+    <ClCompile Include="IcoReader.cpp" />
+    <ClCompile Include="Pin.cpp" />
+    <ClCompile Include="PixmapGraphics.cpp" />
+    <ClCompile Include="JpegReader.cpp" />
+    <ClCompile Include="JpegWriter.cpp" />
+    <ClCompile Include="Pixmap.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Rect.cpp" />
+    <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="Size.cpp" />
+    <ClCompile Include="XpmLexer.cpp" />
+    <ClCompile Include="XpmReader.cpp" />
+    <ClCompile Include="Rasterizer.cpp" />
+    <ClCompile Include="RegionGraphics.cpp" />
+    <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="Pen.cpp" />
+    <ClCompile Include="PngReader.cpp" />
+    <ClCompile Include="PngWriter.cpp" />
+    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="XpmWriter.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

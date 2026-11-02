@@ -1,0 +1,27 @@
+/* XPM */
+static char *IconPrinter[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 5 1 ",
+"  c None",
+". c black",
+"X c #808080",
+"o c #C0C0C0",
+"O c white",
+/* pixels */
+"         XXX    ",
+"        XOOOXX  ",
+"       XOOOOOO..",
+"     XXOOOOOO.  ",
+"   XXOXOOOOO.   ",
+" XXOoooXXOO.o.. ",
+"XOooOOoooXX.oXX.",
+"XOOOooOOoooXXXX.",
+"XOooOOoooXXXXXX.",
+"XOooooOXXXXXXXX.",
+"XXoooooXXXXXX.. ",
+" XXXoooXXXX..X. ",
+" .ooXXoXX..XX.. ",
+"  ..ooX..XX..   ",
+"    ..oXX..     ",
+"      ...       "
+};

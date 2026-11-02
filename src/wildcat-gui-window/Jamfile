@@ -1,0 +1,63 @@
+SubDir TOP src wildcat-gui-window ;
+
+SubDirHdrs $(TOP)/include ;
+SubDirHdrs $(TOP)/src/wildcat-gui-window/$(WILDCAT_GUI) ;
+
+if $(WILDCAT_GUI:L) = "x11"
+{
+
+SubDirHdrs /usr/include/freetype2 ;
+
+}
+
+SubDirC++Flags [ FDefines WILDCAT_GUI_WINDOW_API_EXPORT ] ;
+
+SubDirObjects $(WILDCAT_OUTPUT_OBJECT) wildcat-gui-window ;
+
+
+#SubDirC++Flags [ FDefines WILDCAT_GUI_WINDOW_X11_CORE ] ;
+#SubDirC++Flags [ FDefines WILDCAT_GUI_WINDOW_X11_RASTER ] ;
+#SubDirC++Flags [ FDefines WILDCAT_GUI_WINDOW_WIN32_GDI ] ;
+#SubDirC++Flags [ FDefines WILDCAT_GUI_WINDOW_WIN32_RASTER ] ;
+
+WILDCAT_GUI_WINDOW_SUBDIR = [ FDirName $(TOP) src wildcat-gui-window $(WILDCAT_GUI:L) ] ;
+
+WILDCAT_GUI_WINDOW_IMPL_SOURCES += [ GLOB $(WILDCAT_GUI_WINDOW_SUBDIR) : *.cpp  ] ;
+
+SharedLibrary wildcat-gui-window :  Application.cpp
+                                    Control.cpp
+                                    Cursor.cpp     
+                                    View.cpp
+                                    InputMethod.cpp
+                                    Popup.cpp
+                                    Screen.cpp 
+                                    MdiArea.cpp
+                                    Element.cpp                            
+                                    DragAndDrop.cpp
+                                    Layout.cpp
+                                    DockingLayout.cpp
+                                    FlowLayout.cpp
+                                    ScrollLayout.cpp
+                                    StackLayout.cpp                            
+                                    FrameButton.cpp
+                                    Widget.cpp
+                                    WindowBase.cpp
+                                    WindowManager.cpp
+                                    WindowFrame.cpp
+                                    Window.cpp
+                                    WindowFrameBase.cpp
+                                    WindowManagerBase.cpp
+                                    Key.cpp
+                                    Spacing.cpp
+                                    SystemColors.cpp
+                                    ElementInfo.cpp
+                                    LibraryInfo.cpp
+                                    LibraryLoader.cpp
+                                    ToolTip.cpp
+                                    $(WILDCAT_GUI_WINDOW_IMPL_SOURCES) ;
+
+LinkSharedLibraries wildcat-gui-window : wildcat-gui-base wildcat-gui-gfx ;
+
+LinkLibs wildcat-gui-window : $(WILDCAT_HMI_LINKLIBS) ;
+
+MakeLocate wildcat-gui-window : $(WILDCAT_OUTPUT_TARGET) ;

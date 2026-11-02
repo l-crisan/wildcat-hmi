@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="Jamfile" />
+    <None Include="freetype\src\Jamfile">
+      <Filter>Source Files\ext-libs\freetype</Filter>
+    </None>
+    <None Include="libz\Jamfile">
+      <Filter>Source Files\ext-libs\zlib</Filter>
+    </None>
+    <None Include="libjpeg\Jamfile">
+      <Filter>Source Files\ext-libs\jpeg</Filter>
+    </None>
+    <None Include="libpng\Jamfile">
+      <Filter>Source Files\ext-libs\png</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{d7de82c8-222d-4f6e-bf23-6d5f44afd51c}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\api">
+      <UniqueIdentifier>{f53a47f8-9f6e-4d2d-b110-c11262b333d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{87c36a7f-6295-4caf-abea-52b1799e5ad1}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\imaging">
+      <UniqueIdentifier>{ed9eaf0c-d0e0-4e3a-986c-08d43a465f35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\api\imaging">
+      <UniqueIdentifier>{a355ee54-9991-409e-a7a0-8c40d78a6c93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\api\painting">
+      <UniqueIdentifier>{b7912ec7-1908-48bf-bd31-da520d2ab89e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ext-libs">
+      <UniqueIdentifier>{de53de1b-01d1-4aed-9a49-9cdbb9ab54cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ext-libs\zlib">
+      <UniqueIdentifier>{942b6261-9aa4-4d51-bc8f-f38db639b8d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ext-libs\png">
+      <UniqueIdentifier>{8ba869ba-6ef8-4fa7-9ccd-c67c47b92cea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ext-libs\freetype">
+      <UniqueIdentifier>{f0829efc-60b3-4fee-89d6-7bc67fd66a77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ext-libs\jpeg">
+      <UniqueIdentifier>{88a14a96-db85-4f11-9948-18d4d11a8692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\painting">
+      <UniqueIdentifier>{ae35103f-5f23-48a3-8a2c-8290caf0f814}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\rasterizer">
+      <UniqueIdentifier>{862dc946-0456-45be-a3dc-20e6b6941b2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\rasterizer">
+      <UniqueIdentifier>{ee8c19ea-bd8e-4810-997b-55b30f8699a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\api\imaging\files">
+      <UniqueIdentifier>{c91c4f47-95db-4814-9616-5ee477e66fa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\imaging\files">
+      <UniqueIdentifier>{043f5255-8397-459f-b0dc-1b5d3f44533d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\imaging\files\xpm">
+      <UniqueIdentifier>{564dba66-f6f7-4687-8a04-91f59b50c363}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\api\shapes">
+      <UniqueIdentifier>{a5c5f3df-ccd0-40f2-9326-a416bf1d5cb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shapes">
+      <UniqueIdentifier>{7d659cf5-eccd-4cdc-a9ee-f0fce1487a68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fonts">
+      <UniqueIdentifier>{115a44c0-1d33-4415-aa13-826c6e8e138e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IcoHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Api.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Algorithm.h">
+      <Filter>Header Files\rasterizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Arrow.h">
+      <Filter>Header Files\api\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\BlockScale.h">
+      <Filter>Header Files\api\imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\BmpReader.h">
+      <Filter>Header Files\api\imaging\files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\BmpWriter.h">
+      <Filter>Header Files\api\imaging\files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Brush.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Check.h">
+      <Filter>Header Files\api\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Color.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\ColorPalette.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\CompositionMode.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Cross.h">
+      <Filter>Header Files\api\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Font.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\FontInfo.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\FontMetrics.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Graphics.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Icon.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\IcoReader.h">
+      <Filter>Header Files\api\imaging\files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\ImageReader.h">
+      <Filter>Header Files\api\imaging\files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\ImageWriter.h">
+      <Filter>Header Files\api\imaging\files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\JpegReader.h">
+      <Filter>Header Files\api\imaging\files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\JpegWriter.h">
+      <Filter>Header Files\api\imaging\files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Pin.h">
+      <Filter>Header Files\api\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Pen.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\PixmapGraphics.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\PngReader.h">
+      <Filter>Header Files\api\imaging\files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\PngWriter.h">
+      <Filter>Header Files\api\imaging\files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Point.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Polygon.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Rect.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\RegionGraphics.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Shape.h">
+      <Filter>Header Files\api\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Size.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Transform.h">
+      <Filter>Header Files\api\painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\XpmReader.h">
+      <Filter>Header Files\api\imaging\files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\XpmWriter.h">
+      <Filter>Header Files\api\imaging\files</Filter>
+    </ClInclude>
+    <ClInclude Include="XpmLexer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BmpHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenSans-Bold.h">
+      <Filter>Header Files\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenSans-Italic.h">
+      <Filter>Header Files\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenSans-Regular.h">
+      <Filter>Header Files\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="Rasterizer.h">
+      <Filter>Header Files\rasterizer</Filter>
+    </ClInclude>
+    <ClInclude Include="LineSlope.h">
+      <Filter>Header Files\rasterizer</Filter>
+    </ClInclude>
+    <ClInclude Include="LineFace.h">
+      <Filter>Header Files\rasterizer</Filter>
+    </ClInclude>
+    <ClInclude Include="LineEdge.h">
+      <Filter>Header Files\rasterizer</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeType.h">
+      <Filter>Header Files\rasterizer</Filter>
+    </ClInclude>
+    <ClInclude Include="EdgeTable.h">
+      <Filter>Header Files\rasterizer</Filter>
+    </ClInclude>
+    <ClInclude Include="Edge.h">
+      <Filter>Header Files\rasterizer</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawText.h">
+      <Filter>Header Files\rasterizer</Filter>
+    </ClInclude>
+    <ClInclude Include="ClipPolygon.h">
+      <Filter>Header Files\rasterizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\Pixmap.h">
+      <Filter>Header Files\api\imaging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\gfx\ColorManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FontMetrics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClipPolygon.cpp">
+      <Filter>Source Files\rasterizer</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawText.cpp">
+      <Filter>Source Files\rasterizer</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeType.cpp">
+      <Filter>Source Files\rasterizer</Filter>
+    </ClCompile>
+    <ClCompile Include="Rasterizer.cpp">
+      <Filter>Source Files\rasterizer</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="RegionGraphics.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="PixmapGraphics.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="Icon.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="JpegReader.cpp">
+      <Filter>Source Files\imaging\files</Filter>
+    </ClCompile>
+    <ClCompile Include="JpegWriter.cpp">
+      <Filter>Source Files\imaging\files</Filter>
+    </ClCompile>
+    <ClCompile Include="PngReader.cpp">
+      <Filter>Source Files\imaging\files</Filter>
+    </ClCompile>
+    <ClCompile Include="PngWriter.cpp">
+      <Filter>Source Files\imaging\files</Filter>
+    </ClCompile>
+    <ClCompile Include="BmpWriter.cpp">
+      <Filter>Source Files\imaging\files</Filter>
+    </ClCompile>
+    <ClCompile Include="BmpReader.cpp">
+      <Filter>Source Files\imaging\files</Filter>
+    </ClCompile>
+    <ClCompile Include="XpmReader.cpp">
+      <Filter>Source Files\imaging\files\xpm</Filter>
+    </ClCompile>
+    <ClCompile Include="XpmLexer.cpp">
+      <Filter>Source Files\imaging\files\xpm</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrow.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Check.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Pen.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="Brush.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="Size.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="FontInfo.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorPalette.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="Pixmap.cpp">
+      <Filter>Source Files\painting</Filter>
+    </ClCompile>
+    <ClCompile Include="XpmWriter.cpp">
+      <Filter>Source Files\imaging\files\xpm</Filter>
+    </ClCompile>
+    <ClCompile Include="IcoReader.cpp">
+      <Filter>Source Files\imaging\files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cross.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Pin.cpp">
+      <Filter>Source Files\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

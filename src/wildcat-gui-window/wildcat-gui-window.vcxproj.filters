@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="Jamfile" />
+    <None Include="cocoa\ApplicationImpl.mm">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </None>
+    <None Include="cocoa\CursorImpl.mm">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </None>
+    <None Include="cocoa\PixmapSurfaceImpl.mm">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </None>
+    <None Include="cocoa\ScreenImpl.mm">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </None>
+    <None Include="cocoa\WindowImpl.mm">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </None>
+    <None Include="cocoa\WindowView.mm">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{d7de82c8-222d-4f6e-bf23-6d5f44afd51c}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\api">
+      <UniqueIdentifier>{f53a47f8-9f6e-4d2d-b110-c11262b333d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{87c36a7f-6295-4caf-abea-52b1799e5ad1}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files\api\events">
+      <UniqueIdentifier>{85fa4a09-5ca0-454e-b465-0adf6f1cf863}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform">
+      <UniqueIdentifier>{9bdbde11-2ac4-4e83-b8eb-79aff2016259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform\linux-fb">
+      <UniqueIdentifier>{87ae75f4-fc00-41ec-b830-91118976cd39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform\win32">
+      <UniqueIdentifier>{9cae6a56-2523-48ca-b49f-c9e9eb3a00b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\api\layout">
+      <UniqueIdentifier>{43c21cae-6309-42ff-9b1d-a5e48b6e293f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\layout">
+      <UniqueIdentifier>{ba77297f-48e2-4d49-90e9-34cb7a45dfc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform\x11">
+      <UniqueIdentifier>{96eee7db-5c48-4a6d-b66d-3dd763b5219c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform\cocoa">
+      <UniqueIdentifier>{663cbdf2-8f25-49ea-aa2f-8c35d18f0d46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform\emscripten">
+      <UniqueIdentifier>{999e2bd3-eda9-478c-b78d-cb1c79a73932}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="win32\ApplicationImpl.h">
+      <Filter>Source Files\platform\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\KeyMap.h">
+      <Filter>Source Files\platform\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\ScreenImpl.h">
+      <Filter>Source Files\platform\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\win32.h">
+      <Filter>Source Files\platform\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\WindowFrameImpl.h">
+      <Filter>Source Files\platform\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="linux-fb\MouseDevice.h">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClInclude>
+    <ClInclude Include="linux-fb\ScreenImpl.h">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClInclude>
+    <ClInclude Include="linux-fb\ApplicationImpl.h">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClInclude>
+    <ClInclude Include="linux-fb\FrameBuffer.h">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClInclude>
+    <ClInclude Include="linux-fb\InputDevice.h">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClInclude>
+    <ClInclude Include="linux-fb\Selector.h">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClInclude>
+    <ClInclude Include="linux-fb\XkbWrapper.h">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClInclude>
+    <ClInclude Include="linux-fb\XkbKeysyms.h">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClInclude>
+    <ClInclude Include="linux-fb\KeymapWrapper.h">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClInclude>
+    <ClInclude Include="x11\ApplicationImpl.h">
+      <Filter>Source Files\platform\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="x11\KeyHandler.h">
+      <Filter>Source Files\platform\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="x11\ScreenImpl.h">
+      <Filter>Source Files\platform\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="x11\WindowFrameImpl.h">
+      <Filter>Source Files\platform\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="x11\X11Fd.h">
+      <Filter>Source Files\platform\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="cocoa\ApplicationImpl.h">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </ClInclude>
+    <ClInclude Include="cocoa\CursorImpl.h">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </ClInclude>
+    <ClInclude Include="cocoa\KeyMap.h">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </ClInclude>
+    <ClInclude Include="cocoa\PaintData.h">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </ClInclude>
+    <ClInclude Include="cocoa\PixmapSurfaceImpl.h">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </ClInclude>
+    <ClInclude Include="cocoa\ScreenImpl.h">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </ClInclude>
+    <ClInclude Include="cocoa\WindowImpl.h">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </ClInclude>
+    <ClInclude Include="cocoa\WindowView.h">
+      <Filter>Source Files\platform\cocoa</Filter>
+    </ClInclude>
+    <ClInclude Include="emscripten\ApplicationImpl.h">
+      <Filter>Source Files\platform\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="emscripten\Keycodes.h">
+      <Filter>Source Files\platform\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="emscripten\ScreenImpl.h">
+      <Filter>Source Files\platform\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="emscripten\Selector.h">
+      <Filter>Source Files\platform\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Application.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Control.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Cursor.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\DragAndDrop.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Element.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\ElementInfo.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Event.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\InputMethod.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Key.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\LibraryInfo.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\LibraryLoader.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\MdiArea.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Popup.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Screen.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Spacing.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\SystemColors.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\ToolTip.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\View.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Widget.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Window.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\WindowBase.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\WindowFrameBase.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\WindowManager.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\WindowManagerBase.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\WindowStateEvent.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\WindowType.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Adjustment.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Alignment.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Api.h">
+      <Filter>Header Files\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\ActivateEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\CloseEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\FocusEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\EnableEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\EnterEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\InvalidateEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\DockingLayout.h">
+      <Filter>Header Files\api\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\FlowLayout.h">
+      <Filter>Header Files\api\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\KeyEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\Layout.h">
+      <Filter>Header Files\api\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\LayoutEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\LeaveEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\MouseEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\MoveEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\ResizeEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\ScrollEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\ScrollLayout.h">
+      <Filter>Header Files\api\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\PaintEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\ShowEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\StackLayout.h">
+      <Filter>Header Files\api\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\wildcat\gui\window\TouchEvent.h">
+      <Filter>Header Files\api\events</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cursor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputMethod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Popup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MdiArea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Element.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Control.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowFrameBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowManagerBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\ApplicationImpl.cpp">
+      <Filter>Source Files\platform\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\ScreenImpl.cpp">
+      <Filter>Source Files\platform\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\WindowFrameImpl.cpp">
+      <Filter>Source Files\platform\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="DragAndDrop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StackLayout.cpp">
+      <Filter>Source Files\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="DockingLayout.cpp">
+      <Filter>Source Files\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="FlowLayout.cpp">
+      <Filter>Source Files\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="Layout.cpp">
+      <Filter>Source Files\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollLayout.cpp">
+      <Filter>Source Files\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Key.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Spacing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ElementInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LibraryInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LibraryLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="linux-fb\ScreenImpl.cpp">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClCompile>
+    <ClCompile Include="linux-fb\ApplicationImpl.cpp">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClCompile>
+    <ClCompile Include="linux-fb\FrameBuffer.cpp">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClCompile>
+    <ClCompile Include="linux-fb\InputDevice.cpp">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClCompile>
+    <ClCompile Include="linux-fb\MouseDevice.cpp">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClCompile>
+    <ClCompile Include="linux-fb\Selector.cpp">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClCompile>
+    <ClCompile Include="linux-fb\XkbWrapper.cpp">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClCompile>
+    <ClCompile Include="linux-fb\KeymapWrapper.cpp">
+      <Filter>Source Files\platform\linux-fb</Filter>
+    </ClCompile>
+    <ClCompile Include="View.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="x11\ApplicationImpl.cpp">
+      <Filter>Source Files\platform\x11</Filter>
+    </ClCompile>
+    <ClCompile Include="x11\KeyHandler.cpp">
+      <Filter>Source Files\platform\x11</Filter>
+    </ClCompile>
+    <ClCompile Include="x11\ScreenImpl.cpp">
+      <Filter>Source Files\platform\x11</Filter>
+    </ClCompile>
+    <ClCompile Include="x11\WindowFrameImpl.cpp">
+      <Filter>Source Files\platform\x11</Filter>
+    </ClCompile>
+    <ClCompile Include="x11\X11Fd.cpp">
+      <Filter>Source Files\platform\x11</Filter>
+    </ClCompile>
+    <ClCompile Include="emscripten\ApplicationImpl.cpp">
+      <Filter>Source Files\platform\emscripten</Filter>
+    </ClCompile>
+    <ClCompile Include="emscripten\ScreenImpl.cpp">
+      <Filter>Source Files\platform\emscripten</Filter>
+    </ClCompile>
+    <ClCompile Include="emscripten\Selector.cpp">
+      <Filter>Source Files\platform\emscripten</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolTip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemColors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

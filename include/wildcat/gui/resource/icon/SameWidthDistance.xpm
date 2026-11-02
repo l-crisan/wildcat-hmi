@@ -1,0 +1,26 @@
+/* XPM */
+static char *IconSameWDist[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 4 1 ",
+"  c None",
+". c #040404",
+"X c #0C0C0C",
+"o c #555555",
+/* pixels */
+"                ",
+"                ",
+"                ",
+"XXX          ...",
+"oo.          .oo",
+"oo.  .    .  .oo",
+"oo. ..    .. .oo",
+"oo............oo",
+"oo. ..    .. .oo",
+"oo.  .    .  .oo",
+"oo.          .oo",
+"oo.          .oo",
+"XX.          ...",
+"                ",
+"                ",
+"                "
+};

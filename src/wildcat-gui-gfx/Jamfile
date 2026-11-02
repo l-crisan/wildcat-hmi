@@ -1,0 +1,67 @@
+SubDir TOP src wildcat-gui-gfx ;
+
+SubDirC++Flags [ FDefines WILDCAT_GUI_GFX_API_EXPORT ] ;
+
+
+SubDirHdrs $(TOP)/include ;
+SubDirHdrs $(TOP)/src/wildcat-gui-gfx/freetype/include ;
+SubDirHdrs $(TOP)/src/wildcat-gui-gfx/libpng ;
+SubDirHdrs $(TOP)/src/wildcat-gui-gfx/libjpeg ;
+SubDirHdrs $(TOP)/src/wildcat-gui-gfx/libz/include ;
+SubDirHdrs $(TOP)/src/wildcat-gui-gfx/libxpm/include/X11 ;
+SubDirHdrs $(TOP)/src/wildcat-gui-gfx/libxpm/src/ ;
+SubDirObjects $(WILDCAT_OUTPUT_OBJECT) wildcat-gui-gfx ;
+
+SharedLibrary wildcat-gui-gfx : Brush.cpp
+                            Color.cpp                            
+                            Font.cpp
+                            FontMetrics.cpp
+                            Pen.cpp
+                            ColorManager.cpp
+                            ColorPalette.cpp
+                            PixmapGraphics.cpp
+                            RegionGraphics.cpp                            
+                            Graphics.cpp
+                            Transform.cpp                                                
+                            JpegReader.cpp                            
+                            JpegWriter.cpp
+                            PngReader.cpp
+                            PngWriter.cpp
+                            BmpReader.cpp
+                            BmpWriter.cpp
+                            XpmReader.cpp
+                            XpmLexer.cpp
+                            ClipPolygon.cpp
+                            DrawText.cpp
+                            FreeType.cpp                                                                                                                                        
+                            Rasterizer.cpp
+                            Icon.cpp
+                            Shape.cpp
+                            Arrow.cpp
+                            Check.cpp
+                            Cross.cpp
+                            Pin.cpp
+                            Point.cpp
+                            Size.cpp
+                            Rect.cpp
+                            FontInfo.cpp
+                            Pixmap.cpp
+                            XpmWriter.cpp
+                            IcoReader.cpp
+                           ;
+
+LinkLibs wildcat-gui-gfx : $(WILDCAT_HMI_LINKLIBS) ;
+
+LinkSharedLibraries wildcat-gui-gfx : wildcat-gui-base ;
+
+LinkLibraries wildcat-gui-gfx : zlib png jpeg freetype ;
+MakeLocate wildcat-gui-gfx : $(WILDCAT_OUTPUT_TARGET) ;
+
+
+SubInclude TOP src wildcat-gui-gfx freetype src ;
+
+SubInclude TOP src wildcat-gui-gfx libjpeg ;
+
+SubInclude TOP src wildcat-gui-gfx libpng ;
+
+SubInclude TOP src wildcat-gui-gfx libz ;

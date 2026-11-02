@@ -1,0 +1,26 @@
+/* XPM */
+static const char *_bc1ae8f106a79a6b1b0e3b6984dfa10c714fd130459a1341cbe5190559907cd[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 4 1 ",
+"  c black",
+". c #808080",
+"X c #C0C0C0",
+"o c None",
+/* pixels */
+"oooooooooooooooo",
+"o              o",
+"o ............ o",
+"o ............ o",
+"o XXXXXXXXXXXX o",
+"o XXXXXXXXXXXX o",
+"o XXXXXXXXXXXX o",
+"o XXXXXXXXXXXX o",
+"o XXXXXXXXXXXX o",
+"o XXXXXXXXXXXX o",
+"o XXXXXXXXXXXX o",
+"o XXXXXXXXXXXX o",
+"o XXXXXXXXXXXX o",
+"o XXXXXXXXXXXX o",
+"o              o",
+"oooooooooooooooo"
+};

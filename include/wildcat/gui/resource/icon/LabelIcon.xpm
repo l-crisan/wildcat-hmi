@@ -1,0 +1,25 @@
+/* XPM */
+static char *LabelIcon[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 3 1 ",
+"  c None",
+". c black",
+"X c #808080",
+/* pixels */
+"XXXXXXXXXXXXXXXX",
+"X              X",
+"X              X",
+"X..            X",
+"X..            X",
+"X..            X",
+"X..       .... X",
+"X..      ..  ..X",
+"X..        ....X",
+"X..       .. ..X",
+"X..      ..  ..X",
+"X..      ..  ..X",
+"X.......  .....X",
+"X              X",
+"X              X",
+"XXXXXXXXXXXXXXXX"
+};

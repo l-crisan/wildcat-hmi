@@ -1,0 +1,26 @@
+/* XPM */
+static const char *DockingPanelIcon[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 4 1 ",
+"  c black",
+". c #008000",
+"X c #808080",
+"o c None",
+/* pixels */
+"XXXXXXXo oXXXXXX",
+"Xoooooo   oooooX",
+"Xooooo     ooooX",
+"Xooooooo ooooooX",
+"Xooooooo.ooooooX",
+"Xo ooo    ooo oX",
+"o  ooo    ooo  X",
+"     o    o     ",
+"X  ooo    ooo  o",
+"Xo ooo    ooo oX",
+"XooooooooooooooX",
+"Xooooooo ooooooX",
+"Xooooooo ooooooX",
+"Xooooo     ooooX",
+"Xoooooo   oooooX",
+"XXXXXXXo XXXXXXX"
+};

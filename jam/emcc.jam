@@ -1,0 +1,266 @@
+##############################################################################
+# Configuration rules
+##############################################################################
+
+rule TryBuild
+{
+    local _cc = [ FCommandAnd $(TOOLSET_SET_PATH) : $(1) ] ;
+    local _src = $(2) ;
+    local _cflags = $(3) ;
+    local _l = $(4) ;
+    local _L = $(5) ;
+    local _out = a.js ;
+    local _out2 = a.wasm ;
+    local _cmd ;
+
+    if $(4)
+    {
+        _cmd = $(_cc) $(LINKFLAGS) -o $(_out) $(_cflags) -I$(STDHDRS) -L$(5) $(_src) $(4) ;
+    }
+    else
+    {
+        _cmd = $(_cc) -c -o $(_out) $(_cflags) -I$(STDHDRS) $(_src) ;
+    }
+
+    local _r = [ TryCommand $(_cmd) ] ;
+
+    TryCommand $(RM) $(_out) $(_out2) ;
+
+    return $(_r) ;
+}
+
+
+rule TryBuildCc
+{
+    local _cflags = $(CCFLAGS) $(2) ;
+    return [ TryBuild $(CC) : $(1) : $(2) : $(3) : $(4) ] ;
+}
+
+
+rule TryBuildC++
+{
+    local _cflags = $(C++FLAGS) $(2) ;
+    return [ TryBuild $(C++) : $(1) : $(2) : $(3) : $(4) ] ;
+}
+
+
+rule CheckToolset
+{
+    EMSDK ?= $(EMSDK:J=" ") ;
+
+    EchoOption EMSDK : "Emscripten SDK" ;
+
+    if $(EMSDK)
+    {
+        TOOLSET_PATH += [ FDirName $(EMSDK:J=" ") upstream emscripten ] ;
+        EMSDK_PYTHON_PATH ?= [ GLOB [ FDirName $(EMSDK) python ]  : * ] ;
+    }
+
+    if $(EMSDK_PYTHON_PATH)
+    {
+        EchoOption EMSDK_PYTHON_PATH : "Emscripten Python Path" ;
+        TOOLSET_PATH += $(EMSDK_PYTHON_PATH:J=" ") ;
+    }
+}
+
+
+rule CheckCc
+{
+    AS           ?= "" ;
+    CC           ?= $(TOOLSET_PREFIX)emcc ;
+    RANLIB       ?= $(TOOLSET_PREFIX)emranlib ;
+    AR           ?= $(TOOLSET_PREFIX)emar ru ;
+    LINK         ?= $(CC) ;
+
+    Configure AS ;
+    Configure AR ;
+    Configure CC ;
+    Configure LINK ;
+    Configure RANLIB ;
+
+    # pool must cover the PROXY_TO_PTHREAD proxy thread plus any app-spawned
+    # worker threads (e.g. Pt::Forms::ApplicationImpl's event loop thread),
+    # otherwise extra pthread_create calls block until the pool grows
+    MAIN_LINKFLAGS = --emrun -s EXPORT_ALL=1 -s MAIN_MODULE=1 ;
+    MAIN_LINKFLAGS += -s PROXY_TO_PTHREAD=1 -s PTHREAD_POOL_SIZE=4 ;
+    MAIN_LINKFLAGS += -s EXIT_RUNTIME=1 ;
+    DLL_LINKFLAGS = -s EXPORT_ALL=1 -s SIDE_MODULE=1 ;
+
+    CCFLAGS += -fPIC -pthread -msimd128 ;
+
+    if $(WITH_DEBUG)
+    {
+        # -gsource-map or -g
+        CCFLAGS += -DDEBUG -D_DEBUG -g ;
+
+        LINKFLAGS ?= -msimd128 -pthread -sSTACK_SIZE=6MB -sINITIAL_MEMORY=256MB -sSHARED_MEMORY=1 -sIMPORTED_MEMORY=1 ;
+    }
+    else
+    {
+        CCFLAGS += -DNDEBUG ;
+        LINKFLAGS ?= -msimd128 -pthread -sSTACK_SIZE=6MB -sINITIAL_MEMORY=256MB -sSHARED_MEMORY=1 -sIMPORTED_MEMORY=1 ;
+    }
+
+    if $(WITH_OPTIM)
+    {
+        OPTIM ?= -O2 ;
+    }
+    else
+    {
+        OPTIM ?= -O0 ;
+    }
+
+    WARN ?= -Wall ;
+
+    Configure CCFLAGS ;
+    Configure WARN ;
+    Configure OPTIM ;
+    Configure LINKFLAGS ;
+    Configure DLL_LINKFLAGS ;
+    Configure MAIN_LINKFLAGS ;
+}
+
+
+rule CheckC++
+{
+    ConfigureCc ;
+
+    C++ ?= $(TOOLSET_PREFIX)em++ ;
+    Configure C++ ;
+
+    LINK++ = $(C++) ;
+    Configure LINK++ ;
+
+    if $(STDC++)
+    {
+        C++FLAGS += -std=c++$(STDC++) ;
+    }
+
+    C++FLAGS += -fexceptions ;
+    C++LINKFLAGS += -fexceptions ;
+
+    C++FLAGS += -fPIC -pthread -msimd128 ;
+
+    if $(WITH_DEBUG)
+    {
+        # -gsource-map or -g
+        C++FLAGS += -DDEBUG -g ;
+    }
+    else
+    {
+        C++FLAGS += -DNDEBUG ;
+    }
+
+    Configure C++FLAGS ;
+    Configure C++LINKFLAGS ;
+}
+
+##############################################################################
+# Build rules
+##############################################################################
+
+rule FDefines
+{ return -D$(<) ; }
+
+
+rule FIncludes
+{ return -I$(<) ; }
+
+
+rule FLibPath
+{ return -L$(<) ; }
+
+
+rule FLinkLibs
+{ return -l$(<) ; }
+
+
+rule Main-Build
+{
+    MainFromObjects $(<) : $(>) ;
+
+    local _target = $(<:S=$(SUFEXE)) ;
+
+    Clean clean : $(_target:S=.js) ;
+    Clean clean : $(_target:S=.wasm) ;
+}
+
+
+rule Main-MakeLocate
+{
+    local _target = $(<:S=$(SUFEXE)) ;
+
+    _MakeLocate $(_target) : $(>) ;
+
+    MakeLocate $(_target:S=.js) : $(>) ;
+    MakeLocate $(_target:S=.wasm) : $(>) ;
+}
+
+
+rule Main-LinkSharedLibraries
+{
+    local _target = [ FAppendSuffix $(<) : $(SUFEXE) ] ;
+    local _libs = $(PRELIB)$(>:S=$(SUFDLL)) ;
+
+    if $(3)
+    {
+        LINKLIBS on $(_target) += $(LINKLIBS) -L$(3) -l$(2) ;
+    }
+    else
+    {
+        Depends $(_target) : $(PRELIB)$(>:S=$(SUFDLL)) ;
+        SHLIBS on $(_target) += $(_libs) ;
+        LINKSHLIBS on $(_target) += $(>:S=$(SUFDLL)) ;
+    }
+}
+
+
+rule SharedLibrary-Build
+{
+    SharedLibraryFromObjects $(<) : $(>:GBS=$(SUFOBJ)) ; # FIX was only S
+    Objects $(>) ;
+
+    # Add library name decorations <lib><name><.so>
+    local _target = $(PRELIB)$(<)$(SUFDLL) ;
+
+    LINKFLAGS on $(_target) += $(LINKFLAGS) $(DLL_LINKFLAGS) ;
+
+    switch $(>:S)
+    {
+        case .C :   LINK on $(_target) = $(LINK++) ;
+                    LINKFLAGS on $(_target) += $(C++LINKFLAGS) ;
+        case .cc :  LINK on $(_target) = $(LINK++) ;
+                    LINKFLAGS on $(_target) += $(C++LINKFLAGS) ;
+        case .cpp : LINK on $(_target) = $(LINK++) ;
+                    LINKFLAGS on $(_target) += $(C++LINKFLAGS) ;
+    }
+}
+
+
+rule SharedLibrary-LinkSharedLibraries
+{
+    local _target = $(PRELIB)$(<:S=$(SUFDLL)) ;
+    local _deps = $(PRELIB)$(>)$(SUFDLL) ;
+
+    if $(3)
+    {
+        LINKLIBS on $(_target) += $(LINKLIBS) -L$(3) -l$(2:S=$(SUFDLL)) ;
+
+    }
+    else
+    {
+        Depends $(_target) : $(_deps) ;
+        SHLIBS on $(_target) += $(PRELIB)$(>:S=$(SUFDLL)) ;
+        LINKSHLIBS on $(_target) += $(>:S=$(SUFDLL)) ;
+    }
+}
+
+##############################################################################
+# Build actions
+##############################################################################
+
+actions Link bind NEEDLIBS SHLIBS RPATHLIBS
+{
+  $(TOOLSET_SET_PATH)
+  $(LINK) $(>) $(LINKFLAGS) -L$(SHLIBS:P) -l$(LINKSHLIBS:B) $(WARN) -o $(<) $(UNDEFS) $(LINKLIBS) $(NEEDLIBS)
+}

@@ -1,0 +1,141 @@
+##########################################################################
+# Jam Environment
+#
+# TODO:
+# http://www.boost.org/boost-build2/doc/html/jam/language.html
+#
+##########################################################################
+
+JAMDIR ?= jam ;
+
+rule Load
+{
+    local _inc = $(<[1]) ;
+
+    for local _i in $(<[2-])
+    {
+        _inc = $(_i:R=$(_inc)) ;
+    }
+
+    _inc = $(_inc:R=$(JAMDIR)) ;
+    include $(_inc) ;
+}
+
+Load base.jam ;
+
+##########################################################################
+# Configuration Switch
+##########################################################################
+
+for local arg in $(ARGV)
+{
+    if $(JAM_SWITCH) && ! $(JAM_SWITCH_CONFIG)
+    {
+        JAM_SWITCH_CONFIG = $(arg) ;
+    }
+
+    if $(arg) = "switch"
+    {
+        JAM_SWITCH = true ;
+    }
+}
+
+##########################################################################
+# Configure Step
+##########################################################################
+
+if configure in $(ARGV)
+{
+    JAM_CONFIGURE = true ;
+}
+
+if $(JAM_SWITCH) || $(JAM_CONFIGURE)
+{
+    Load configure.jam ;
+
+    ConfigureClean ;
+
+    if $(JAM_SWITCH)
+    {
+        ConfigureSwitch $(JAM_SWITCH_CONFIG) ;
+    }
+
+    Echo "Configuring..." ;
+    EchoOption JAMBASE : "Using Jambase" : $(JAMBASE) ;
+    EchoOption OS : "Build Host OS" : $(OS:L) ;
+    EchoOption OSPLAT : "Host Platform" ;
+
+    if --debug in $(ARGV)
+    {
+        WITH_DEBUG = yes ;
+        CONFIG ?= debug ;
+    }
+
+    EchoOption --debug : "Debug Build" : $(WITH_DEBUG:E="no") ;
+
+    if --optimize in $(ARGV)
+    {
+        WITH_OPTIM = yes ;
+        CONFIG ?= release ;
+    }
+
+    EchoOption --optimize : "Optimized Build" : $(WITH_OPTIM:E="no") ;
+
+    STDC++ ?= [ GetOption --stdc++ ] ;
+
+    EchoOption --stdc++ : "C++ Standard" : $(STDC++:E="(compiler default)") ;
+
+    # configure build
+    ConfigureLog "[ Configure ]" ;
+    ConfigureRm ;
+    ConfigureMv ;
+    ConfigureCp ;
+    ConfigureMkDir ;
+    ConfigureChMod ;
+    ConfigureLn ;
+    ConfigureDotSlash ;
+    ConfigureCmd ;
+    ConfigureTarget ;
+    ConfigureToolset ;
+
+    # TODO: set NDEBUG here for all toolsets
+
+    # Project specific configuration
+    ConfigureLog "\n[ Jamconfigure ]" ;
+    include Jamconfigure ;
+
+    # save configuration, so it can be reused
+    Configure CONFIG ;
+    ConfigureSave $(CONFIG) ;
+    EchoOption CONFIG : "Build configuration" ;
+
+    ConfigureExit ;
+}
+
+if ! [ CHECK_IF_FILE Jamrules ]
+{
+    Exit "Build not configured. Run jam configure first." ;
+}
+
+##########################################################################
+# Build Step
+##########################################################################
+
+Load build.jam ;
+
+# Project root Jamfile
+include Jamfile ;
+
+##########################################################################
+# Reset Target
+##########################################################################
+
+if $(CONFIG)
+{
+    DEPENDS reset : clean ;
+    NOTFILE reset ;
+    ALWAYS reset ;
+
+    Clean reset : $(JAMRULES) ;
+    Clean reset : [ GLOB "" : Jamrules.$(CONFIG) ] ;
+}

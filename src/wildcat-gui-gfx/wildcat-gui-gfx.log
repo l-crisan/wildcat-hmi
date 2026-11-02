@@ -1,0 +1,351 @@
+﻿  Configuring...
+  - Using Jambase [JAMBASE]: jam\Jambase
+  - Build Host OS [OS]: nt
+  - Host Platform [OSPLAT]: X86_64
+  - Debug Build [--debug]: yes
+  - Optimized Build [--optimize]: no
+  - C++ Standard [--stdc++]: (compiler default)
+  - Remove file [RM]: del /f/q
+  - Move file [MV]: move /y
+  - Copy file [CP]: copy
+  - Make dir [MKDIR]: mkdir
+  - Remove dir [RMDIR]: rmdir /s/q
+  - File link [LN]: not supported
+  - Directory dot [DOT]: .
+  - Directory dotdot [DOTDOT]: ..
+  - Directory separator [SLASH]: \
+  - Command separator [CMDSEP]: &
+  - Command and [CMDAND]: &&
+  - Target OS [TARGET_OS]: nt
+  - Target Platform [TARGET_OSPLAT]: x86_64
+  - Object suffix [SUFOBJ]: .obj
+  - Executable suffix [SUFEXE]: .exe
+  - Library prefix) [PRELIB]:
+  - Library suffix [SUFLIB]: .lib
+  - Shared library suffix [SUFDLL]: .dll
+  - Toolset [TOOLSET]: vc17
+  - Using MSVC version [MSVC_VERSION]: 14.51.36231
+  - Visual C Compiler [VISUALC]: C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\\14.51.36231\
+  - Toolset path [TOOLSET_PATH]:  C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\\14.51.36231\\bin\Hostx64\x64 C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\\14.51.36231\
+  - Using Platform SDK [PLATFORMSDK]: C:\Program Files (x86)\Windows Kits\10\
+  - Using Windows Kit [WINKIT]: 10.0.26100.0
+  - Assembler [AS]: ml64
+  - Archiver [AR]: lib
+  - C compiler [CC]: cl /nologo
+  - Linker [LINK]: link /nologo
+  - Ranlib tool [RANLIB]:
+  - Optimisation [OPTIM]: /Od
+  - Warning Level [WARN]: /W3
+  - C Flags [CCFLAGS]: /FS /MDd /D DEBUG /D _DEBUG /Zi /DWIN32
+  - Standard Headers [STDHDRS]: "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\\14.51.36231\\include" "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um" "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared" "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt"
+  - Link Flags [LINKFLAGS]: /MANIFEST /LIBPATH:"C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\\14.51.36231\\lib\x64" /DEBUG /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\um\x64" /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\ucrt\x64"
+  - Main Link Flags [MAIN_LINKFLAGS]:
+  - Dll Link Flags [DLL_LINKFLAGS]:
+  - C++ compiler [C++]: cl /nologo
+  - C++ Linker [LINK++]: link /nologo
+  - C++ Flags [C++FLAGS]: /FS /DWIN32 /AI "C:\Program Files (x86)\Windows Kits\10\UnionMetadata" /AI "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\\14.51.36231\\VC\VCPackages" /EHsc /fp:precise /GR /TP /FD /MDd /D DEBUG /D _DEBUG /Zi
+  - C++ Link Flags [C++LINKFLAGS]:
+  - Wildcat Binary Output Dir [WILDCAT_OUTPUT_TARGET]: build\WinX64Debug
+  - Wildcat Object Output Dir [WILDCAT_OUTPUT_OBJECT]: tmp\WinX64Debug
+  - Wildcat Testing Output Dir [WILDCAT_OUTPUT_TEST]: build\WinX64Debug
+  - Wildcat Library Dir [WILDCAT_LIBDIR]: lib\WinX64Debug
+  - Wildcat Binary Install Dir [WILDCAT_INSTALL_BINDIR]: deploy\WinX64Debug\bin
+  - Wildcat Include Install Dir [WILDCAT_INSTALL_INCLUDEDIR]: deploy\WinX64Debug\include
+  - Wildcat Library Install Dir [WILDCAT_INSTALL_LIBDIR]: deploy\WinX64Debug\lib
+  - Psapi libs [PSAPI_LINKLIBS]: Psapi.lib
+  - System abstraction [WILDCAT_SYSTEM]: win32
+  - System linklibs [WILDCAT_SYSTEM_LINKLIBS]: Psapi.lib
+  - WSA2 libs [WSA_LINKLIBS]: ws2_32.lib Iphlpapi.lib
+  - Network libs [NETLIBS]: ws2_32.lib Iphlpapi.lib
+  - Qt support [--with-qt5]: no
+  - Windows UI [WITH_WINUI]: yes
+  - User32 lib flags [WINUI_LIBS]: user32.lib
+  - GDI library [WITH_GDI]: yes
+  - GDI lib flags [GDI_LIBS]: gdi32.lib Msimg32.lib
+  - UI platform [GUI]: win32
+  - UI implementation [WILDCAT_GUI_IMPL]: win32-gdi
+  - UI platform linklibs [GUILIBS]: gdi32.lib Msimg32.lib user32.lib
+  - UI platform C++ flags [WILDCAT_GUI_C++FLAGS]:
+  - Build configuration [CONFIG]: WinX64Debug
+  Configuration successful.
+  
+  WildCat-HMI
+  Configuration (CONFIG)... WinX64Debug
+  Host Operating System (OS)... nt
+  Host Platform (OSPLAT)... x86_64
+  Target OS (TARGET_OS)... nt
+  Target Platform (TARGET_OSPLAT)... x86_64
+  Toolset (TOOLSET)... vc17
+  Use OpenSSL (--with-openssl)...
+  Graphic User Interface (GUI)... win32
+  System Interface (SYS)...
+  C++ Flags (C++FLAGS)... /FS /DWIN32 /AI "C:\Program Files (x86)\Windows Kits\10\UnionMetadata" /AI "C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\\14.51.36231\\VC\VCPackages" /EHsc /fp:precise /GR /TP /FD /MDd /D DEBUG /D _DEBUG /Zi
+  C Flags (CCFLAGS)... /FS /MDd /D DEBUG /D _DEBUG /Zi /DWIN32
+  GUI Linbs (GUI_LIBS)...
+  C-Linker Flags (WILDCAT_C_LINKFLAGS)...
+  C++-Linker Flags (WILDCAT_LINKFLAGS)...
+  Optimisation (OPTIM)... /Od
+  Warnings (WARN)... /W3
+  Build targets (WILDCAT_OUTPUT_TARGET)... build\WinX64Debug
+  Build objects (WILDCAT_OUTPUT_OBJECT)... tmp\WinX64Debug
+  Install programs (INSTALL_BINDIR)...
+  Install includes (INSTALL_INCLUDEDIR)...
+  Install libraries (INSTALL_LIBDIR)...
+  
+  ...found 761 targets...
+  ...updating 15 targets...
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\Point.obj
+  Point.cpp
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\Check.obj
+  Check.cpp
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Check.cpp(35): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\Arrow.obj
+  Arrow.cpp
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Arrow.cpp(79): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\Shape.obj
+  Shape.cpp
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\Icon.obj
+  Icon.cpp
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Icon.cpp(409): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Icon.cpp(409): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Icon.cpp(441): warning C4244: "Argument": Konvertierung von "T" in "T", möglicher Datenverlust
+          with
+          [
+              T=double
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Icon.cpp(441): warning C4244: "Argument": Konvertierung von "T" in "T", möglicher Datenverlust
+          with
+          [
+              T=double
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Icon.cpp(255): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\Cross.obj
+  Cross.cpp
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Cross.cpp(73): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\Brush.obj
+  Brush.cpp
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(60): warning C4244: "Argument": Konvertierung von "float" in "uint8_t", möglicher Datenverlust
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(59): warning C4244: "Argument": Konvertierung von "float" in "uint8_t", möglicher Datenverlust
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(58): warning C4244: "Argument": Konvertierung von "float" in "uint8_t", möglicher Datenverlust
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(57): warning C4244: "Argument": Konvertierung von "float" in "uint8_t", möglicher Datenverlust
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(511): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(511): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(517): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(518): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(518): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(522): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(523): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(523): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(527): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(527): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(528): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(528): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(536): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(536): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(541): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(541): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(546): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(546): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(554): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(554): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(559): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(572): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(572): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Brush.cpp(577): warning C4267: "Argument": Konvertierung von "size_t" nach "T", Datenverlust möglich
+          with
+          [
+              T=int
+          ]
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\Pin.obj
+  Pin.cpp
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pin.cpp(85): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pin.cpp(86): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pin.cpp(87): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pin.cpp(89): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pin.cpp(90): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pin.cpp(92): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pin.cpp(93): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\Size.obj
+  Size.cpp
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\Rect.obj
+  Rect.cpp
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\XpmWriter.obj
+  XpmWriter.cpp
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\FontInfo.obj
+  FontInfo.cpp
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\IcoReader.obj
+  IcoReader.cpp
+  C++ tmp\WinX64Debug\wildcat-gui-gfx\Pixmap.obj
+  Pixmap.cpp
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pixmap.cpp(484): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pixmap.cpp(484): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "const int", Datenverlust möglich
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pixmap.cpp(529): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pixmap.cpp(529): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "const int", Datenverlust möglich
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pixmap.cpp(534): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
+C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pixmap.cpp(535): warning C4267: "Initialisierung": Konvertierung von "size_t" nach "int", Datenverlust möglich
+C:\Users\Laure\projekte\atesion\github\wildcat\include\wildcat/base/String.h(202): warning C4244: "Argument": Konvertierung von "_Elem" in "_Elem", möglicher Datenverlust
+          with
+          [
+              _Elem=wchar_t
+          ]
+          and
+          [
+              _Elem=char
+          ]
+  C:\Users\Laure\projekte\atesion\github\wildcat\include\wildcat/base/String.h(202): note: der Vorlageninstanziierungskontext (der älteste zuerst) ist
+  C:\Users\Laure\projekte\atesion\github\wildcat\src\wildcat-gui-gfx\Pixmap.cpp(390): note: Siehe Verweis auf die gerade kompilierte Instanziierung "T wildcat::base::String::toLower<std::string>(const T &)" der Funktions-Vorlage.
+          with
+          [
+              T=std::string
+          ]
+  Link build\WinX64Debug\wildcat-gui-gfx.dll
+     Bibliothek "build\WinX64Debug\wildcat-gui-gfx.lib" und Objekt "build\WinX64Debug\wildcat-gui-gfx.exp" werden erstellt.
+  ...updated 15 targets...

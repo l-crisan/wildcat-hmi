@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="LinuxARM64Debug|Win32">
+      <Configuration>LinuxARM64Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="LinuxARMDebug|Win32">
+      <Configuration>LinuxARMDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="LinuxARMRelease|Win32">
+      <Configuration>LinuxARMRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="LinuxARM64Release|Win32">
+      <Configuration>LinuxARM64Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WebDebug|Win32">
+      <Configuration>WebDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WebRelease|Win32">
+      <Configuration>WebRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WinX64Debug|Win32">
+      <Configuration>WinX64Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WinX64Release|Win32">
+      <Configuration>WinX64Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WinX86Debug|Win32">
+      <Configuration>WinX86Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="WinX86Release|Win32">
+      <Configuration>WinX86Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>wildcat-gui-window</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WebRelease|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WebDebug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMRelease|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMDebug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WebRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WebDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Debug|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Release|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WebRelease|Win32'">
+    <NMakeOutput />
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WebDebug|Win32'">
+    <NMakeOutput />
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Release|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Debug|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Debug|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT;WILDCAT_HMI_WIN32_RASTER</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)\include;</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMRelease|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMDebug|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Release|Win32'">
+    <NMakeOutput>
+    </NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions);ENSO_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_SLAVE_API;ENSO_RT_ETHERCAT_SLAVE_EXPORT;ENSO_RT_ETHERCAT_API_EXPORT;WILDCAT_ETHERCAT_BASE_API_EXPORT;WILDCAT_ETHERCAT_ENI_API_EXPORT;WILDCAT_ETHERCAT_ESI_API_EXPORT</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>$(SolutionDir)vs-jam-build.bat $(Configuration) $(ProjectName)</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>$(SolutionDir)vs-jam-clean.bat $(Configuration) $(ProjectName)</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(SolutionDir)include</NMakeIncludeSearchPath>
+    <OutDir />
+    <IntDir />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Debug|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARM64Release|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMDebug|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='LinuxARMRelease|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Debug|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinX64Release|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WebRelease|Win32'">
+    <BuildLog>
+      <Path>
+      </Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WebDebug|Win32'">
+    <BuildLog>
+      <Path>
+      </Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Debug|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinX86Release|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\wildcat\gui\window\ActivateEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Adjustment.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Alignment.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Api.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Application.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\CloseEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Control.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Cursor.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\DockingLayout.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\DragAndDrop.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Element.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\ElementInfo.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\EnableEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\EnterEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Event.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\FlowLayout.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\FocusEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\InputMethod.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\InvalidateEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Key.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\KeyEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Layout.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\LayoutEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\LeaveEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\LibraryInfo.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\LibraryLoader.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\MdiArea.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\MouseEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\MoveEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\PaintEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Popup.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\ResizeEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Screen.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\ScrollEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\ScrollLayout.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\ShowEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Spacing.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\StackLayout.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\SystemColors.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\ToolTip.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\TouchEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\View.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Widget.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\Window.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\WindowBase.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\WindowFrameBase.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\WindowManager.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\WindowManagerBase.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\WindowStateEvent.h" />
+    <ClInclude Include="..\..\include\wildcat\gui\window\WindowType.h" />
+    <ClInclude Include="cocoa\ApplicationImpl.h" />
+    <ClInclude Include="cocoa\CursorImpl.h" />
+    <ClInclude Include="cocoa\KeyMap.h" />
+    <ClInclude Include="cocoa\PaintData.h" />
+    <ClInclude Include="cocoa\PixmapSurfaceImpl.h" />
+    <ClInclude Include="cocoa\ScreenImpl.h" />
+    <ClInclude Include="cocoa\WindowImpl.h" />
+    <ClInclude Include="cocoa\WindowView.h" />
+    <ClInclude Include="emscripten\ApplicationImpl.h" />
+    <ClInclude Include="emscripten\Keycodes.h" />
+    <ClInclude Include="emscripten\ScreenImpl.h" />
+    <ClInclude Include="emscripten\Selector.h" />
+    <ClInclude Include="FrameButton.h" />
+    <ClInclude Include="linux-fb\ApplicationImpl.h" />
+    <ClInclude Include="linux-fb\FrameBuffer.h" />
+    <ClInclude Include="linux-fb\InputDevice.h" />
+    <ClInclude Include="linux-fb\KeymapWrapper.h" />
+    <ClInclude Include="linux-fb\MouseDevice.h" />
+    <ClInclude Include="linux-fb\ScreenImpl.h" />
+    <ClInclude Include="linux-fb\Selector.h" />
+    <ClInclude Include="linux-fb\XkbKeysyms.h" />
+    <ClInclude Include="linux-fb\XkbWrapper.h" />
+    <ClInclude Include="WindowFrame.h" />
+    <ClInclude Include="win32\ApplicationImpl.h" />
+    <ClInclude Include="win32\KeyMap.h" />
+    <ClInclude Include="win32\ScreenImpl.h" />
+    <ClInclude Include="win32\win32.h" />
+    <ClInclude Include="win32\WindowFrameImpl.h" />
+    <ClInclude Include="x11\ApplicationImpl.h" />
+    <ClInclude Include="x11\KeyHandler.h" />
+    <ClInclude Include="x11\ScreenImpl.h" />
+    <ClInclude Include="x11\WindowFrameImpl.h" />
+    <ClInclude Include="x11\X11Fd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="SystemColors.cpp" />
+    <ClCompile Include="ToolTip.cpp" />
+    <ClCompile Include="View.cpp" />
+    <ClCompile Include="emscripten\ApplicationImpl.cpp" />
+    <ClCompile Include="emscripten\ScreenImpl.cpp" />
+    <ClCompile Include="emscripten\Selector.cpp" />
+    <ClCompile Include="linux-fb\ApplicationImpl.cpp" />
+    <ClCompile Include="linux-fb\FrameBuffer.cpp" />
+    <ClCompile Include="linux-fb\InputDevice.cpp" />
+    <ClCompile Include="linux-fb\KeymapWrapper.cpp" />
+    <ClCompile Include="linux-fb\MouseDevice.cpp" />
+    <ClCompile Include="linux-fb\ScreenImpl.cpp" />
+    <ClCompile Include="linux-fb\Selector.cpp" />
+    <ClCompile Include="linux-fb\XkbWrapper.cpp" />
+    <ClCompile Include="Widget.cpp" />
+    <ClCompile Include="Cursor.cpp" />
+    <ClCompile Include="DockingLayout.cpp" />
+    <ClCompile Include="DragAndDrop.cpp" />
+    <ClCompile Include="ElementInfo.cpp" />
+    <ClCompile Include="FlowLayout.cpp" />
+    <ClCompile Include="FrameButton.cpp" />
+    <ClCompile Include="Key.cpp" />
+    <ClCompile Include="LibraryInfo.cpp" />
+    <ClCompile Include="LibraryLoader.cpp" />
+    <ClCompile Include="Spacing.cpp" />
+    <ClCompile Include="WindowBase.cpp" />
+    <ClCompile Include="InputMethod.cpp" />
+    <ClCompile Include="Layout.cpp" />
+    <ClCompile Include="Popup.cpp" />
+    <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="ScrollLayout.cpp" />
+    <ClCompile Include="MdiArea.cpp" />
+    <ClCompile Include="WindowFrame.cpp" />
+    <ClCompile Include="WindowManager.cpp" />
+    <ClCompile Include="StackLayout.cpp" />
+    <ClCompile Include="Element.cpp" />
+    <ClCompile Include="Control.cpp" />
+    <ClCompile Include="win32\ApplicationImpl.cpp" />
+    <ClCompile Include="win32\ScreenImpl.cpp" />
+    <ClCompile Include="win32\WindowFrameImpl.cpp" />
+    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="WindowFrameBase.cpp" />
+    <ClCompile Include="WindowManagerBase.cpp" />
+    <ClCompile Include="x11\ApplicationImpl.cpp" />
+    <ClCompile Include="x11\KeyHandler.cpp" />
+    <ClCompile Include="x11\ScreenImpl.cpp" />
+    <ClCompile Include="x11\WindowFrameImpl.cpp" />
+    <ClCompile Include="x11\X11Fd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cocoa\ApplicationImpl.mm" />
+    <None Include="cocoa\CursorImpl.mm" />
+    <None Include="cocoa\PixmapSurfaceImpl.mm" />
+    <None Include="cocoa\ScreenImpl.mm" />
+    <None Include="cocoa\WindowImpl.mm" />
+    <None Include="cocoa\WindowView.mm" />
+    <None Include="Jamfile" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

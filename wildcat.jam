@@ -1,0 +1,34 @@
+#Copyright (C) 2023 Atesion GmbH. All rights reserved.
+
+WILDCAT_GUI = $(GUI) ;
+
+
+PNG_INCLUDES = [ FDirName $(TOP) include libpng ] ;
+JPEG_INCLUDES = [ FDirName $(TOP) include libjpeg ] ;
+FREETYPE_INCLUDES = [ FDirName $(TOP) include freetype ] ;
+
+# Print the configuration info
+Echo "" ;
+Echo "WildCat-HMI" ;
+Echo "Configuration (CONFIG)..." $(CONFIG) ;
+Echo "Host Operating System (OS)..." $(OS:L) ;
+Echo "Host Platform (OSPLAT)..." $(OSPLAT:L) ;
+Echo "Target OS (TARGET_OS)..." $(TARGET_OS:L) ;
+Echo "Target Platform (TARGET_OSPLAT)..." $(TARGET_OSPLAT:L) ;
+Echo "Toolset (TOOLSET)..." $(TOOLSET) ;
+Echo "Use OpenSSL (--with-openssl)..." $(WITH_OPENSSL) ;
+Echo "Graphic User Interface (GUI)..." $(GUI) ;
+Echo "System Interface (SYS)..." $(SYS) ;
+Echo "C++ Flags (C++FLAGS)..." $(C++FLAGS) ;
+Echo "C Flags (CCFLAGS)..." $(CCFLAGS) ;
+Echo "GUI Linbs (GUI_LIBS)..." $(GUI_LIBS) ;
+Echo "C-Linker Flags (WILDCAT_C_LINKFLAGS)..." $(WILDCAT_C_LINKFLAGS) ;
+Echo "C++-Linker Flags (WILDCAT_LINKFLAGS)..." $(WILDCAT_LINKFLAGS) ;
+Echo "Optimisation (OPTIM)..." $(OPTIM) ;
+Echo "Warnings (WARN)..." $(WARN) ;
+Echo "Build targets (WILDCAT_OUTPUT_TARGET)..." $(WILDCAT_OUTPUT_TARGET) ;
+Echo "Build objects (WILDCAT_OUTPUT_OBJECT)..." $(WILDCAT_OUTPUT_OBJECT) ;
+Echo "Install programs (INSTALL_BINDIR)..." $(INSTALL_BINDIR) ;
+Echo "Install includes (INSTALL_INCLUDEDIR)..." $(INSTALL_INCLUDEDIR) ;
+Echo "Install libraries (INSTALL_LIBDIR)..." $(INSTALL_LIBDIR) ;
+Echo "" ;

@@ -1,0 +1,115 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "jam", "jam", "{54C9BF3C-80BA-42D9-8EB4-3BAD6C8F65AA}"
+	ProjectSection(SolutionItems) = preProject
+		jam.bat = jam.bat
+		jam.sh = jam.sh
+		Jamconfigure = Jamconfigure
+		Jamfile = Jamfile
+		wildcat.jam = wildcat.jam
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vs", "vs", "{D3A1A76E-D32D-4E0D-A24C-02E47C008939}"
+	ProjectSection(SolutionItems) = preProject
+		build-all.bat = build-all.bat
+		vs-jam-build.bat = vs-jam-build.bat
+		vs-jam-clean.bat = vs-jam-clean.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{C7E7B331-7819-4E3E-ACBB-0141398E22C1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wildcat-gui-gfx", "src\wildcat-gui-gfx\wildcat-gui-gfx.vcxproj", "{F9FDC755-DF27-437D-8665-4715592D0FB2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wildcat-gui-window", "src\wildcat-gui-window\wildcat-gui-window.vcxproj", "{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wildcat-gui-base", "src\wildcat-gui-base\wildcat-gui-base.vcxproj", "{F597DB88-D5CC-41B7-9984-F381E529FDA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		LinuxARM64Debug|Jambuild = LinuxARM64Debug|Jambuild
+		LinuxARM64Release|Jambuild = LinuxARM64Release|Jambuild
+		LinuxARMDebug|Jambuild = LinuxARMDebug|Jambuild
+		LinuxARMRelease|Jambuild = LinuxARMRelease|Jambuild
+		WebDebug|Jambuild = WebDebug|Jambuild
+		WebRelease|Jambuild = WebRelease|Jambuild
+		WinX64Debug|Jambuild = WinX64Debug|Jambuild
+		WinX64Release|Jambuild = WinX64Release|Jambuild
+		WinX86Debug|Jambuild = WinX86Debug|Jambuild
+		WinX86Release|Jambuild = WinX86Release|Jambuild
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.LinuxARM64Debug|Jambuild.ActiveCfg = LinuxARM64Debug|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.LinuxARM64Debug|Jambuild.Build.0 = LinuxARM64Debug|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.LinuxARM64Release|Jambuild.ActiveCfg = LinuxARM64Release|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.LinuxARM64Release|Jambuild.Build.0 = LinuxARM64Release|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.LinuxARMDebug|Jambuild.ActiveCfg = LinuxARMDebug|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.LinuxARMDebug|Jambuild.Build.0 = LinuxARMDebug|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.LinuxARMRelease|Jambuild.ActiveCfg = LinuxARMRelease|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.LinuxARMRelease|Jambuild.Build.0 = LinuxARMRelease|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.WebDebug|Jambuild.ActiveCfg = WebDebug|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.WebDebug|Jambuild.Build.0 = WebDebug|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.WebRelease|Jambuild.ActiveCfg = WebRelease|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.WebRelease|Jambuild.Build.0 = WebRelease|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.WinX64Debug|Jambuild.ActiveCfg = WinX64Debug|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.WinX64Debug|Jambuild.Build.0 = WinX64Debug|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.WinX64Release|Jambuild.ActiveCfg = WinX64Release|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.WinX64Release|Jambuild.Build.0 = WinX64Release|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.WinX86Debug|Jambuild.ActiveCfg = WinX86Debug|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.WinX86Debug|Jambuild.Build.0 = WinX86Debug|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.WinX86Release|Jambuild.ActiveCfg = WinX86Release|Win32
+		{F9FDC755-DF27-437D-8665-4715592D0FB2}.WinX86Release|Jambuild.Build.0 = WinX86Release|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.LinuxARM64Debug|Jambuild.ActiveCfg = LinuxARM64Debug|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.LinuxARM64Debug|Jambuild.Build.0 = LinuxARM64Debug|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.LinuxARM64Release|Jambuild.ActiveCfg = LinuxARM64Release|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.LinuxARM64Release|Jambuild.Build.0 = LinuxARM64Release|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.LinuxARMDebug|Jambuild.ActiveCfg = LinuxARMDebug|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.LinuxARMDebug|Jambuild.Build.0 = LinuxARMDebug|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.LinuxARMRelease|Jambuild.ActiveCfg = LinuxARMRelease|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.LinuxARMRelease|Jambuild.Build.0 = LinuxARMRelease|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.WebDebug|Jambuild.ActiveCfg = WebDebug|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.WebDebug|Jambuild.Build.0 = WebDebug|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.WebRelease|Jambuild.ActiveCfg = WebRelease|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.WebRelease|Jambuild.Build.0 = WebRelease|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.WinX64Debug|Jambuild.ActiveCfg = WinX64Debug|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.WinX64Debug|Jambuild.Build.0 = WinX64Debug|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.WinX64Release|Jambuild.ActiveCfg = WinX64Release|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.WinX64Release|Jambuild.Build.0 = WinX64Release|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.WinX86Debug|Jambuild.ActiveCfg = WinX86Debug|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.WinX86Debug|Jambuild.Build.0 = WinX86Debug|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.WinX86Release|Jambuild.ActiveCfg = WinX86Release|Win32
+		{3D3A6ADE-DAA7-487F-AFDD-6427A9C0D966}.WinX86Release|Jambuild.Build.0 = WinX86Release|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.LinuxARM64Debug|Jambuild.ActiveCfg = LinuxARM64Debug|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.LinuxARM64Debug|Jambuild.Build.0 = LinuxARM64Debug|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.LinuxARM64Release|Jambuild.ActiveCfg = LinuxARM64Release|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.LinuxARM64Release|Jambuild.Build.0 = LinuxARM64Release|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.LinuxARMDebug|Jambuild.ActiveCfg = LinuxARMDebug|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.LinuxARMDebug|Jambuild.Build.0 = LinuxARMDebug|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.LinuxARMRelease|Jambuild.ActiveCfg = LinuxARMRelease|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.LinuxARMRelease|Jambuild.Build.0 = LinuxARMRelease|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.WebDebug|Jambuild.ActiveCfg = WebDebug|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.WebDebug|Jambuild.Build.0 = WebDebug|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.WebRelease|Jambuild.ActiveCfg = WebRelease|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.WebRelease|Jambuild.Build.0 = WebRelease|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.WinX64Debug|Jambuild.ActiveCfg = WinX64Debug|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.WinX64Debug|Jambuild.Build.0 = WinX64Debug|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.WinX64Release|Jambuild.ActiveCfg = WinX64Release|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.WinX64Release|Jambuild.Build.0 = WinX64Release|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.WinX86Debug|Jambuild.ActiveCfg = WinX86Debug|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.WinX86Debug|Jambuild.Build.0 = WinX86Debug|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.WinX86Release|Jambuild.ActiveCfg = WinX86Release|Win32
+		{F597DB88-D5CC-41B7-9984-F381E529FDA3}.WinX86Release|Jambuild.Build.0 = WinX86Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{54C9BF3C-80BA-42D9-8EB4-3BAD6C8F65AA} = {C7E7B331-7819-4E3E-ACBB-0141398E22C1}
+		{D3A1A76E-D32D-4E0D-A24C-02E47C008939} = {C7E7B331-7819-4E3E-ACBB-0141398E22C1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FCBC4E3-5FEE-43C4-BDDF-8AAA0B85CF00}
+	EndGlobalSection
+EndGlobal
